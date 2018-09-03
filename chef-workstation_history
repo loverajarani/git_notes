@@ -1,0 +1,218 @@
+ubuntu@ip-172-31-42-141:~$ sudo -i
+root@ip-172-31-42-141:~# cd chef-repo/
+root@ip-172-31-42-141:~/chef-repo# clear
+[3;J
+root@ip-172-31-42-141:~/chef-repo# ls
+cookbooks  loverajarani4091.pem  README.md  roles
+root@ip-172-31-42-141:~/chef-repo# history
+    1  clear
+    2  ls
+    3  knife bootstrap 18.191.145.233 --sudo -x ubuntu -i loverajarani4091.pem -N node1
+    4  clear
+    5  18.191.145.233 installing with dpkg...
+    6  18.191.145.233 Selecting previously unselected package chef.
+    7  (Reading database ... 51281 files and directories currently installed.)
+    8  18.191.145.233 Preparing to unpack .../chef_14.4.56-1_amd64.deb ...
+    9  18.191.145.233 Unpacking chef (14.4.56-1) ...
+   10  18.191.145.233 Setting up chef (14.4.56-1) ...
+   11  18.191.145.233 Thank you for installing Chef!
+   12  18.191.145.233 Starting the first Chef Client run...
+   13  18.191.145.233 Starting Chef Client, version 14.4.56
+   14  18.191.145.233 resolving cookbooks for run list: []
+   15  18.191.145.233 Synchronizing Cookbooks:
+   16  18.191.145.233 Installing Cookbook Gems:
+   17  18.191.145.233 Compiling Cookbooks...
+   18  18.191.145.233 [2018-09-03T04:51:48+00:00] WARN: Node node11 has an empty run list.
+   19  18.191.145.233 Converging 0 resources
+   20  18.191.145.233
+   21  18.191.145.233 Running handlers:
+   22  18.191.145.233 Running handlers complete
+   23  18.191.145.233 Chef Client finished, 0/0 resources updated in 01 seconds
+   24  root@ip-172-31-42-141:~/chef-repo# knife node list
+   25  node11
+   26  root@ip-172-31-42-141:~/chef-repo# clear
+   27  root@ip-172-31-42-141:~/chef-repo# knife bootstrap 18.191.145.233 --sudo -x ubuntu -i loverajarani4091.pem -N node11
+   28  Creating new client for node11
+   29  Creating new node for node11
+   30  Connecting to 18.191.145.233
+   31  18.191.145.233 -----> Existing Chef installation detected
+   32  18.191.145.233 Starting the first Chef Client run...
+   33  18.191.145.233 Starting Chef Client, version 14.4.56
+   34  18.191.145.233 resolving cookbooks for run list: []
+   35  18.191.145.233 Synchronizing Cookbooks:
+   36  18.191.145.233 Installing Cookbook Gems:
+   37  18.191.145.233 Compiling Cookbooks...
+   38  18.191.145.233 [2018-09-03T04:56:36+00:00] WARN: Node node11 has an empty run list.
+   39  18.191.145.233 Converging 0 resources
+   40  18.191.145.233
+   41  18.191.145.233 Running handlers:
+   42  18.191.145.233 Running handlers complete
+   43  18.191.145.233 Chef Client finished, 0/0 resources updated in 01 seconds
+   44  root@ip-172-31-42-141:~/chef-repo# ls
+   45  cookbooks  loverajarani4091.pem  README.md  roles
+   46  root@ip-172-31-42-141:~/chef-repo# coookbooks
+   47  coookbooks: command not found
+   48  root@ip-172-31-42-141:~/chef-repo# knife bootstrap 18.191.145.233 --sudo -x ubuntu -i loverajarani4091.pem -N node11
+   49  knife bootstrap 18.191.145.233 --sudo -x ubuntu -i loverajarani4091.pem -N node1
+   50  clear
+   51  knife bootstrap 18.191.145.233 --sudo -x ubuntu -i loverajarani4091.pem -N node1
+   52  cd chef-repo/
+   53  clear
+   54  ls
+   55  history
+
+
+
+    1  clear
+    2  ls
+    3  knife bootstrap 18.191.145.233 --sudo -x ubuntu -i loverajarani4091.pem -N node1
+    4  clear
+    5  18.191.145.233 installing with dpkg...
+    6  18.191.145.233 Selecting previously unselected package chef.
+    7  (Reading database ... 51281 files and directories currently installed.)
+    8  18.191.145.233 Preparing to unpack .../chef_14.4.56-1_amd64.deb ...
+    9  18.191.145.233 Unpacking chef (14.4.56-1) ...
+   10  18.191.145.233 Setting up chef (14.4.56-1) ...
+   11  18.191.145.233 Thank you for installing Chef!
+   12  18.191.145.233 Starting the first Chef Client run...
+   13  18.191.145.233 Starting Chef Client, version 14.4.56
+   14  18.191.145.233 resolving cookbooks for run list: []
+   15  18.191.145.233 Synchronizing Cookbooks:
+   16  18.191.145.233 Installing Cookbook Gems:
+   17  18.191.145.233 Compiling Cookbooks...
+   18  18.191.145.233 [2018-09-03T04:51:48+00:00] WARN: Node node11 has an empty run list.
+   19  18.191.145.233 Converging 0 resources
+   20  18.191.145.233
+   21  18.191.145.233 Running handlers:
+   22  18.191.145.233 Running handlers complete
+   23  18.191.145.233 Chef Client finished, 0/0 resources updated in 01 seconds
+   24  root@ip-172-31-42-141:~/chef-repo# knife node list
+   25  node11
+   26  root@ip-172-31-42-141:~/chef-repo# clear
+   27  root@ip-172-31-42-141:~/chef-repo# knife bootstrap 18.191.145.233 --sudo -x ubuntu -i loverajarani4091.pem -N node11
+   28  Creating new client for node11
+   29  Creating new node for node11
+   30  Connecting to 18.191.145.233
+   31  18.191.145.233 -----> Existing Chef installation detected
+   32  18.191.145.233 Starting the first Chef Client run...
+   33  18.191.145.233 Starting Chef Client, version 14.4.56
+   34  18.191.145.233 resolving cookbooks for run list: []
+   35  18.191.145.233 Synchronizing Cookbooks:
+   36  18.191.145.233 Installing Cookbook Gems:
+   37  18.191.145.233 Compiling Cookbooks...
+   38  18.191.145.233 [2018-09-03T04:56:36+00:00] WARN: Node node11 has an empty run list.
+   39  18.191.145.233 Converging 0 resources
+   40  18.191.145.233
+   41  18.191.145.233 Running handlers:
+   42  18.191.145.233 Running handlers complete
+   43  18.191.145.233 Chef Client finished, 0/0 resources updated in 01 seconds
+   44  root@ip-172-31-42-141:~/chef-repo# ls
+   45  cookbooks  loverajarani4091.pem  README.md  roles
+   46  root@ip-172-31-42-141:~/chef-repo# coookbooks
+   47  coookbooks: command not found
+   48  root@ip-172-31-42-141:~/chef-repo# knife bootstrap 18.191.145.233 --sudo -x ubuntu -i loverajarani4091.pem -N node11
+   49  knife bootstrap 18.191.145.233 --sudo -x ubuntu -i loverajarani4091.pem -N node1
+   50  clear
+   51  knife bootstrap 18.191.145.233 --sudo -x ubuntu -i loverajarani4091.pem -N node1
+   52  cd chef-repo/
+   53  clear
+   54  ls
+   55  history
+root@ip-172-31-42-141:~/chef-repo# cd ..
+root@ip-172-31-42-141:~# history
+    1  clear
+    2  ls
+    3  knife bootstrap 18.191.145.233 --sudo -x ubuntu -i loverajarani4091.pem -N node1
+    4  clear
+    5  18.191.145.233 installing with dpkg...
+    6  18.191.145.233 Selecting previously unselected package chef.
+    7  (Reading database ... 51281 files and directories currently installed.)
+    8  18.191.145.233 Preparing to unpack .../chef_14.4.56-1_amd64.deb ...
+    9  18.191.145.233 Unpacking chef (14.4.56-1) ...
+   10  18.191.145.233 Setting up chef (14.4.56-1) ...
+   11  18.191.145.233 Thank you for installing Chef!
+   12  18.191.145.233 Starting the first Chef Client run...
+   13  18.191.145.233 Starting Chef Client, version 14.4.56
+   14  18.191.145.233 resolving cookbooks for run list: []
+   15  18.191.145.233 Synchronizing Cookbooks:
+   16  18.191.145.233 Installing Cookbook Gems:
+   17  18.191.145.233 Compiling Cookbooks...
+   18  18.191.145.233 [2018-09-03T04:51:48+00:00] WARN: Node node11 has an empty run list.
+   19  18.191.145.233 Converging 0 resources
+   20  18.191.145.233
+   21  18.191.145.233 Running handlers:
+   22  18.191.145.233 Running handlers complete
+   23  18.191.145.233 Chef Client finished, 0/0 resources updated in 01 seconds
+   24  root@ip-172-31-42-141:~/chef-repo# knife node list
+   25  node11
+   26  root@ip-172-31-42-141:~/chef-repo# clear
+   27  root@ip-172-31-42-141:~/chef-repo# knife bootstrap 18.191.145.233 --sudo -x ubuntu -i loverajarani4091.pem -N node11
+   28  Creating new client for node11
+   29  Creating new node for node11
+   30  Connecting to 18.191.145.233
+   31  18.191.145.233 -----> Existing Chef installation detected
+   32  18.191.145.233 Starting the first Chef Client run...
+   33  18.191.145.233 Starting Chef Client, version 14.4.56
+   34  18.191.145.233 resolving cookbooks for run list: []
+   35  18.191.145.233 Synchronizing Cookbooks:
+   36  18.191.145.233 Installing Cookbook Gems:
+   37  18.191.145.233 Compiling Cookbooks...
+   38  18.191.145.233 [2018-09-03T04:56:36+00:00] WARN: Node node11 has an empty run list.
+   39  18.191.145.233 Converging 0 resources
+   40  18.191.145.233
+   41  18.191.145.233 Running handlers:
+   42  18.191.145.233 Running handlers complete
+   43  18.191.145.233 Chef Client finished, 0/0 resources updated in 01 seconds
+   44  root@ip-172-31-42-141:~/chef-repo# ls
+   45  cookbooks  loverajarani4091.pem  README.md  roles
+   46  root@ip-172-31-42-141:~/chef-repo# coookbooks
+   47  coookbooks: command not found
+   48  root@ip-172-31-42-141:~/chef-repo# knife bootstrap 18.191.145.233 --sudo -x ubuntu -i loverajarani4091.pem -N node11
+   49  knife bootstrap 18.191.145.233 --sudo -x ubuntu -i loverajarani4091.pem -N node1
+   50  clear
+   51  knife bootstrap 18.191.145.233 --sudo -x ubuntu -i loverajarani4091.pem -N node1
+   52  cd chef-repo/
+   53  clear
+   54  ls
+   55  history
+   56  cd ..
+   57  history
+   
+root@ip-172-31-42-141:~# ls
+chefdk_3.1.0-1_amd64.deb  chef-starter.zip      snap
+chef-repo                 loverajarani4091.pem
+root@ip-172-31-42-141:~# 
+
+root@ip-172-31-42-141:~/chef-repo/cookbooks# chef generate cookbook chef_demo1
+Generating cookbook chef_demo1
+- Ensuring correct cookbook file content
+- Committing cookbook files to git
+- Ensuring delivery configuration
+- Ensuring correct delivery build cookbook content
+- Adding delivery configuration to feature branch
+- Adding build cookbook to feature branch
+- Merging delivery content feature branch to master
+
+Your cookbook is ready. Type `cd chef_demo1` to enter it.
+
+There are several commands you can run to get started locally developing and testing your cookbook.
+Type `delivery local --help` to see a full list.
+
+Why not start by writing a test? Tests for the default recipe are stored at:
+
+test/integration/default/default_test.rb
+
+If you'd prefer to dive right in, the default recipe can be found at:
+
+recipes/default.rb
+
+root@ip-172-31-42-141:~/chef-repo/cookbooks# knife cookbook upload chef_demo1
+Uploading chef_demo1     [0.1.0]
+Uploaded 1 cookbook.
+root@ip-172-31-42-141:~/chef-repo/cookbooks# ls
+chef_demo  chef_demo1  chefignore  starter
+root@ip-172-31-42-141:~/chef-repo/cookbooks# knife node run_list add node4091 recipe[chef_demo1]
+node4091:
+  run_list:
+    recipe[chef_demo]
+    recipe[chef_demo1]   
