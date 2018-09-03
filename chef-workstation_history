@@ -216,3 +216,14 @@ node4091:
   run_list:
     recipe[chef_demo]
     recipe[chef_demo1]   
+
+root@ip-172-31-38-130:~# cd /var/chef/
+root@ip-172-31-38-130:/var/chef# ls
+cache
+root@ip-172-31-38-130:/var/chef# cd cache/
+root@ip-172-31-38-130:/var/chef/cache# ls
+chef-client-running.pid  cookbooks  data_collector_metadata.json
+root@ip-172-31-38-130:/var/chef/cache# cd cookbooks/
+root@ip-172-31-38-130:/var/chef/cache/cookbooks# ls
+chef_demo  chef_demo1
+root@ip-172-31-38-130:/var/chef/cache/cookbooks# 
