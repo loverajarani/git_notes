@@ -124,3 +124,37 @@ root@ip-172-31-39-65:~/chef-repo# cp /root/loverajarani4091.pem .
 root@ip-172-31-39-65:~/chef-repo# ls
 cookbooks  loverajarani4091.pem  README.md  roles
 root@ip-172-31-39-65:~/chef-repo# 
+
+CHECKING SERVER AND INSTALL CHEF_DK
+root@ip-172-31-39-65:~/chef-repo# knife node list
+The program 'knife' is currently not installed. You can install it by typing:
+apt install chef
+root@ip-172-31-39-65:~/chef-repo# cd
+root@ip-172-31-39-65:~# ls
+chefdk_3.1.0-1_amd64.deb  chef-starter.zip      snap
+chef-repo                 loverajarani4091.pem
+root@ip-172-31-39-65:~# dpkg -i chefdk_3.1.0-1_amd64.deb 
+Selecting previously unselected package chefdk.
+(Reading database ... 51299 files and directories currently installed.)
+Preparing to unpack chefdk_3.1.0-1_amd64.deb ...
+Unpacking chefdk (3.1.0-1) ...
+Setting up chefdk (3.1.0-1) ...
+Thank you for installing Chef Development Kit!
+root@ip-172-31-39-65:~# chef --version
+Chef Development Kit Version: 3.1.0
+chef-client version: 14.2.0
+delivery version: master (6862f27aba89109a9630f0b6c6798efec56b4efe)
+berks version: 7.0.4
+kitchen version: 1.22.0
+inspec version: 2.1.72
+root@ip-172-31-39-65:~# knife node list
+WARNING: No knife configuration file found. See https://docs.chef.io/config_rb_knife.html for details.
+WARN: Failed to read the private key /etc/chef/client.pem: #<Errno::ENOENT: No such file or directory @ rb_sysopen - /etc/chef/client.pem>
+ERROR: Your private key could not be loaded from /etc/chef/client.pem
+Check your configuration file and ensure that your private key is readable
+root@ip-172-31-39-65:~# cd chef-repo/
+root@ip-172-31-39-65:~/chef-repo# knife node list
+node16
+node26
+node4091
+root@ip-172-31-39-65:~/chef-repo# 
