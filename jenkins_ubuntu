@@ -42,6 +42,8 @@ Get:40 http://security.ubuntu.com/ubuntu xenial-security/multiverse Translation-
 Get:41 http://ppa.launchpad.net/webupd8team/java/ubuntu xenial/main Translation-en [928 B]
 Fetched 25.5 MB in 4s (5,371 kB/s)                                        
 Reading package lists... Done
+
+
 root@ip-172-31-32-95:~# sudo apt-get install default-jre
 Reading package lists... Done
 Building dependency tree       
@@ -49,18 +51,22 @@ Reading state information... Done
 default-jre is already the newest version (2:1.8-56ubuntu2).
 default-jre set to manually installed.
 0 upgraded, 0 newly installed, 0 to remove and 11 not upgraded.
+
 root@ip-172-31-32-95:~# sudo apt-get install default-jre
 Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 default-jre is already the newest version (2:1.8-56ubuntu2).
 0 upgraded, 0 newly installed, 0 to remove and 11 not upgraded.
+
 root@ip-172-31-32-95:~# sudo apt-get install default-jdk
 Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
 default-jdk is already the newest version (2:1.8-56ubuntu2).
 0 upgraded, 0 newly installed, 0 to remove and 11 not upgraded.
+
+
 root@ip-172-31-32-95:~# sudo add-apt-repository ppa:webupd8team/java
  Oracle Java (JDK) Installer (automatically downloads and installs Oracle JDK8). There are no actual Java files in this PPA.
 
@@ -89,6 +95,7 @@ gpg: no ultimately trusted keys found
 gpg: Total number processed: 1
 gpg:               imported: 1  (RSA: 1)
 OK
+
 root@ip-172-31-32-95:~# sudo apt-get update
 Hit:1 http://us-east-2.ec2.archive.ubuntu.com/ubuntu xenial InRelease
 Hit:2 http://us-east-2.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease  
@@ -96,6 +103,7 @@ Hit:3 http://us-east-2.ec2.archive.ubuntu.com/ubuntu xenial-backports InRelease
 Hit:4 http://security.ubuntu.com/ubuntu xenial-security InRelease              
 Hit:5 http://ppa.launchpad.net/webupd8team/java/ubuntu xenial InRelease 
 Reading package lists... Done                     
+
 root@ip-172-31-32-95:~# sudo apt-get install oracle-java8-installer
 Reading package lists... Done
 Building dependency tree       
@@ -280,6 +288,7 @@ Setting up xfonts-encodings (1:1.0.4-2) ...
 Setting up xfonts-utils (1:7.7+3ubuntu0.16.04.2) ...
 Setting up gsfonts-x11 (0.24) ...
 Processing triggers for libc-bin (2.23-0ubuntu10) ...
+
 root@ip-172-31-32-95:~# sudo update-alternatives --config java
 There are 2 choices for the alternative java (providing /usr/bin/java).
 
@@ -290,28 +299,11 @@ There are 2 choices for the alternative java (providing /usr/bin/java).
 * 2            /usr/lib/jvm/java-8-oracle/jre/bin/java          1081      manual mode
 
 Press <enter> to keep the current choice[*], or type selection number: 0
-root@ip-172-31-32-95:~# sudo update-alternatives --config command
-update-alternatives: error: no alternatives for command
-root@ip-172-31-32-95:~# sudo update-alternatives --config 0
-update-alternatives: error: no alternatives for 0
-root@ip-172-31-32-95:~# sudo update-alternatives --config command
-update-alternatives: error: no alternatives for command
-root@ip-172-31-32-95:~# sudo update-alternatives --config java
-There are 2 choices for the alternative java (providing /usr/bin/java).
 
-  Selection    Path                                            Priority   Status
-------------------------------------------------------------
-* 0            /usr/lib/jvm/java-8-oracle/jre/bin/java          1081      auto mode
-  1            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java   1081      manual mode
-  2            /usr/lib/jvm/java-8-oracle/jre/bin/java          1081      manual mode
-
-Press <enter> to keep the current choice[*], or type selection number: 0
-root@ip-172-31-32-95:~# udo nano /etc/environment
-The program 'udo' is currently not installed. You can install it by typing:
-apt install udo
-root@ip-172-31-32-95:~# sudo nano /etc/environment
-root@ip-172-31-32-95:~# sudo nano /etc/environment
 root@ip-172-31-32-95:~# vi /etc/environment
+
+JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+
 root@ip-172-31-32-95:~# source /etc/environment
 root@ip-172-31-32-95:~# echo $JAVA_HOME
 /usr/lib/jvm/java-8-oracle
