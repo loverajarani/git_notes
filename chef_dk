@@ -158,3 +158,129 @@ node16
 node26
 node4091
 root@ip-172-31-39-65:~/chef-repo# 
+
+
+START CLIENT INSTANCE & BOOTSTRAP IT
+
+root@ip-172-31-39-65:~/chef-repo# cd cookbooks/
+root@ip-172-31-39-65:~/chef-repo/cookbooks# ls
+chefignore  starter
+root@ip-172-31-39-65:~/chef-repo/cookbooks# chef generate cookbook chef_dk
+Generating cookbook chef_dk
+- Ensuring correct cookbook file content
+- Committing cookbook files to git
+- Ensuring delivery configuration
+- Ensuring correct delivery build cookbook content
+- Adding delivery configuration to feature branch
+- Adding build cookbook to feature branch
+- Merging delivery content feature branch to master
+
+Your cookbook is ready. Type `cd chef_dk` to enter it.
+
+There are several commands you can run to get started locally developing and testing your cookbook.
+Type `delivery local --help` to see a full list.
+
+Why not start by writing a test? Tests for the default recipe are stored at:
+
+test/integration/default/default_test.rb
+
+If you'd prefer to dive right in, the default recipe can be found at:
+
+recipes/default.rb
+
+root@ip-172-31-39-65:~/chef-repo/cookbooks# ls
+chef_dk  chefignore  starter
+root@ip-172-31-39-65:~/chef-repo/cookbooks# knife cookbook upload chef_dk
+Uploading chef_dk        [0.1.0]
+Uploaded 1 cookbook.
+root@ip-172-31-39-65:~/chef-repo/cookbooks# cd ..
+root@ip-172-31-39-65:~/chef-repo# knife bootstrap 18.220.163.179 --sudo -x ubuntu -i loverajarani4091.pem -N loverajarani -r "recipe[chef_dk]"
+Creating new client for loverajarani
+Creating new node for loverajarani
+Connecting to 18.220.163.179
+18.220.163.179 -----> Installing Chef Omnibus (-v 14)
+18.220.163.179 downloading https://omnitruck-direct.chef.io/chef/install.sh
+18.220.163.179   to file /tmp/install.sh.1429/install.sh
+18.220.163.179 trying wget...
+18.220.163.179 ubuntu 16.04 x86_64
+18.220.163.179 Getting information for chef stable 14 for ubuntu...
+18.220.163.179 downloading https://omnitruck-direct.chef.io/stable/chef/metadata?v=14&p=ubuntu&pv=16.04&m=x86_64
+18.220.163.179   to file /tmp/install.sh.1433/metadata.txt
+18.220.163.179 trying wget...
+18.220.163.179 sha1	bc01aa7fcc52bea125103b4238bd96c66958cb0d
+18.220.163.179 sha256	50da7f865309ef31d858c03c3efd051a62a261715d6d4b58ea186c29e8f42cfa
+18.220.163.179 url	https://packages.chef.io/files/stable/chef/14.4.56/ubuntu/16.04/chef_14.4.56-1_amd64.deb
+18.220.163.179 version	14.4.56
+18.220.163.179 downloaded metadata file looks valid...
+18.220.163.179 downloading https://packages.chef.io/files/stable/chef/14.4.56/ubuntu/16.04/chef_14.4.56-1_amd64.deb
+18.220.163.179   to file /tmp/install.sh.1433/chef_14.4.56-1_amd64.deb
+18.220.163.179 trying wget...
+18.220.163.179 Comparing checksum with sha256sum...
+18.220.163.179 Installing chef 14
+18.220.163.179 installing with dpkg...
+18.220.163.179 Selecting previously unselected package chef.
+(Reading database ... 51281 files and directories currently installed.)
+18.220.163.179 Preparing to unpack .../chef_14.4.56-1_amd64.deb ...
+18.220.163.179 Unpacking chef (14.4.56-1) ...
+18.220.163.179 Setting up chef (14.4.56-1) ...
+18.220.163.179 Thank you for installing Chef!
+18.220.163.179 Starting the first Chef Client run...
+18.220.163.179 Starting Chef Client, version 14.4.56
+18.220.163.179 resolving cookbooks for run list: ["chef_dk"]
+18.220.163.179 Synchronizing Cookbooks:
+18.220.163.179   - chef_dk (0.1.0)
+18.220.163.179 Installing Cookbook Gems:
+18.220.163.179 Compiling Cookbooks...
+18.220.163.179 Converging 0 resources
+18.220.163.179 
+18.220.163.179 Running handlers:
+18.220.163.179 Running handlers complete
+18.220.163.179 Chef Client finished, 0/0 resources updated in 01 seconds
+root@ip-172-31-39-65:~/chef-repo# 
+
+CHEK IN CLIENT MACHINE
+admin1@admin:~$ ssh -i "loverajarani4091.pem" ubuntu@ec2-18-220-163-179.us-east-2.compute.amazonaws.com
+Welcome to Ubuntu 16.04.5 LTS (GNU/Linux 4.4.0-1065-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+0 packages can be updated.
+0 updates are security updates.
+
+New release '18.04.1 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Mon Sep  3 09:44:06 2018 from 183.82.216.131
+ubuntu@ip-172-31-37-127:~$ chef --version
+The program 'chef' is currently not installed. You can install it by typing:
+sudo apt install filters
+ubuntu@ip-172-31-37-127:~$ sudo chef-client
+Starting Chef Client, version 14.4.56
+resolving cookbooks for run list: ["chef_dk"]
+Synchronizing Cookbooks:
+  - chef_dk (0.1.0)
+Installing Cookbook Gems:
+Compiling Cookbooks...
+Converging 0 resources
+
+Running handlers:
+Running handlers complete
+Chef Client finished, 0/0 resources updated in 01 seconds
+ubuntu@ip-172-31-37-127:~$ cd /var/chef/
+ubuntu@ip-172-31-37-127:/var/chef$ ls
+cache
+ubuntu@ip-172-31-37-127:/var/chef$ cd cache/
+ubuntu@ip-172-31-37-127:/var/chef/cache$ ls
+chef-client-running.pid  cookbooks  data_collector_metadata.json
+ubuntu@ip-172-31-37-127:/var/chef/cache$ cd cookbooks/
+ubuntu@ip-172-31-37-127:/var/chef/cache/cookbooks$ ls
+chef_dk
+ubuntu@ip-172-31-37-127:/var/chef/cache/cookbooks$ 
+
+
