@@ -1,0 +1,22 @@
+ACCESS  STARTERKIT FROM LOCAL TO AWS MACHINE IN UBUNTU(LOCAL&REMOTE)
+admin1@admin:~$ su - root
+Password: 
+root@admin:~# scp -i loverajarani4091.pem chef-starter.zip ubuntu@18.222.11.54:/tmp
+Warning: Identity file loverajarani4091.pem not accessible: No such file or directory.
+The authenticity of host '18.222.11.54 (18.222.11.54)' can't be established.
+ECDSA key fingerprint is 06:db:72:d6:6d:a9:54:5d:27:88:e5:d7:a7:1b:09:6d.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '18.222.11.54' (ECDSA) to the list of known hosts.
+Permission denied (publickey).
+lost connection
+root@admin:~# scp -i loverajarani4091.pem chef-starter.zip ubuntu@18.222.11.54:/tmp
+Warning: Identity file loverajarani4091.pem not accessible: No such file or directory.
+Permission denied (publickey).
+lost connection
+root@admin:~# cd /home/admin1/
+root@admin:/home/admin1# scp -i loverajarani4091.pem chef-starter.zip ubuntu@18.222.11.54:/tmp
+chef-starter.zip                              100% 7836     7.7KB/s   00:01    
+root@admin:/home/admin1# scp -i loverajarani4091.pem loverajarani4091.pem  ubuntu@18.222.11.54:/tmp
+loverajarani4091.pem                          100% 1696     1.7KB/s   00:00    
+root@admin:/home/admin1# 
+
