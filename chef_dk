@@ -1,4 +1,8 @@
-ACCESS  STARTERKIT FROM LOCAL TO AWS MACHINE IN UBUNTU(LOCAL&REMOTE)
+root@admin:/home/admin1# ls -ltr loverajarani4091.pem 
+-r-------- 1 admin1 admin1 1696 Aug 30 10:58 loverajarani4091.pem
+root@admin:/home/admin1# 
+
+*****************ACCESS  STARTERKIT FROM LOCAL TO AWS MACHINE IN UBUNTU(LOCAL&REMOTE)**************************
 admin1@admin:~$ su - root
 Password: 
 root@admin:~# scp -i loverajarani4091.pem chef-starter.zip ubuntu@18.222.11.54:/tmp
@@ -125,7 +129,7 @@ root@ip-172-31-39-65:~/chef-repo# ls
 cookbooks  loverajarani4091.pem  README.md  roles
 root@ip-172-31-39-65:~/chef-repo# 
 
-CHECKING SERVER AND INSTALL CHEF_DK
+********************************CHECKING SERVER AND INSTALL CHEF_DK****************************************
 root@ip-172-31-39-65:~/chef-repo# knife node list
 The program 'knife' is currently not installed. You can install it by typing:
 apt install chef
@@ -160,7 +164,7 @@ node4091
 root@ip-172-31-39-65:~/chef-repo# 
 
 
-START CLIENT INSTANCE & BOOTSTRAP IT
+****************************************START CLIENT INSTANCE & BOOTSTRAP IT**********************************************
 
 root@ip-172-31-39-65:~/chef-repo# cd cookbooks/
 root@ip-172-31-39-65:~/chef-repo/cookbooks# ls
@@ -238,7 +242,7 @@ Connecting to 18.220.163.179
 18.220.163.179 Chef Client finished, 0/0 resources updated in 01 seconds
 root@ip-172-31-39-65:~/chef-repo# 
 
-CHEK IN CLIENT MACHINE
+***************************************CHEK IN CLIENT MACHINE*************************************************
 admin1@admin:~$ ssh -i "loverajarani4091.pem" ubuntu@ec2-18-220-163-179.us-east-2.compute.amazonaws.com
 Welcome to Ubuntu 16.04.5 LTS (GNU/Linux 4.4.0-1065-aws x86_64)
 
