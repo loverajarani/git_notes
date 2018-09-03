@@ -20,3 +20,107 @@ root@admin:/home/admin1# scp -i loverajarani4091.pem loverajarani4091.pem  ubunt
 loverajarani4091.pem                          100% 1696     1.7KB/s   00:00    
 root@admin:/home/admin1# 
 
+
+*******************FROM WORKSTATION DOING************************************
+
+admin1@admin:~$ ssh -i "loverajarani4091.pem" ubuntu@ec2-18-222-11-54.us-east-2.compute.amazonaws.com
+Welcome to Ubuntu 16.04.5 LTS (GNU/Linux 4.4.0-1065-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+0 packages can be updated.
+0 updates are security updates.
+
+New release '18.04.1 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Mon Sep  3 09:16:22 2018 from 183.82.216.131
+ubuntu@ip-172-31-39-65:~$ sudo -i
+root@ip-172-31-39-65:~# ls
+snap
+root@ip-172-31-39-65:~# cd /tmp
+root@ip-172-31-39-65:/tmp# ls
+chef-starter.zip
+loverajarani4091.pem
+systemd-private-f5af1768d75c4239bee030d15afff54d-systemd-timesyncd.service-Kgdzug
+root@ip-172-31-39-65:/tmp# cp chef-starter.zip /root
+root@ip-172-31-39-65:/tmp# cp loverajarani4091.pem /root
+root@ip-172-31-39-65:/tmp# cd
+root@ip-172-31-39-65:~# ls
+chef-starter.zip  loverajarani4091.pem  snap
+root@ip-172-31-39-65:~# wget https://packages.chef.io/files/stable/chefdk/3.1.0/ubuntu/18.04/chefdk_3.1.0-1_amd64.deb
+--2018-09-03 09:25:43--  https://packages.chef.io/files/stable/chefdk/3.1.0/ubuntu/18.04/chefdk_3.1.0-1_amd64.deb
+Resolving packages.chef.io (packages.chef.io)... 151.101.202.110
+Connecting to packages.chef.io (packages.chef.io)|151.101.202.110|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 109223956 (104M) [application/x-debian-package]
+Saving to: ‘chefdk_3.1.0-1_amd64.deb’
+
+chefdk_3.1.0-1_amd6 100%[===================>] 104.16M  21.0MB/s    in 7.5s    
+
+2018-09-03 09:25:51 (13.9 MB/s) - ‘chefdk_3.1.0-1_amd64.deb’ saved [109223956/109223956]
+
+root@ip-172-31-39-65:~# apt-get install unzip
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Suggested packages:
+  zip
+The following NEW packages will be installed:
+  unzip
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 158 kB of archives.
+After this operation, 530 kB of additional disk space will be used.
+Get:1 http://us-east-2.ec2.archive.ubuntu.com/ubuntu xenial/main amd64 unzip amd64 6.0-20ubuntu1 [158 kB]
+Fetched 158 kB in 0s (9,456 kB/s)
+Selecting previously unselected package unzip.
+(Reading database ... 51281 files and directories currently installed.)
+Preparing to unpack .../unzip_6.0-20ubuntu1_amd64.deb ...
+Unpacking unzip (6.0-20ubuntu1) ...
+Processing triggers for mime-support (3.59ubuntu1) ...
+Processing triggers for man-db (2.7.5-1) ...
+Setting up unzip (6.0-20ubuntu1) ...
+root@ip-172-31-39-65:~# ls
+chefdk_3.1.0-1_amd64.deb  chef-starter.zip  loverajarani4091.pem  snap
+root@ip-172-31-39-65:~# chef --version
+The program 'chef' is currently not installed. You can install it by typing:
+apt install filters
+root@ip-172-31-39-65:~# unzip chef-starter.zip 
+Archive:  chef-starter.zip
+   creating: chef-repo/cookbooks/
+  inflating: chef-repo/cookbooks/chefignore  
+   creating: chef-repo/cookbooks/starter/
+   creating: chef-repo/cookbooks/starter/files/
+   creating: chef-repo/cookbooks/starter/files/default/
+  inflating: chef-repo/cookbooks/starter/files/default/sample.txt  
+  inflating: chef-repo/cookbooks/starter/metadata.rb  
+   creating: chef-repo/cookbooks/starter/attributes/
+  inflating: chef-repo/cookbooks/starter/attributes/default.rb  
+   creating: chef-repo/cookbooks/starter/templates/
+   creating: chef-repo/cookbooks/starter/templates/default/
+  inflating: chef-repo/cookbooks/starter/templates/default/sample.erb  
+   creating: chef-repo/cookbooks/starter/recipes/
+  inflating: chef-repo/cookbooks/starter/recipes/default.rb  
+  inflating: chef-repo/README.md     
+  inflating: chef-repo/.gitignore    
+   creating: chef-repo/.chef/
+   creating: chef-repo/roles/
+  inflating: chef-repo/.chef/knife.rb  
+  inflating: chef-repo/roles/starter.rb  
+  inflating: chef-repo/.chef/loverajarani.pem  
+root@ip-172-31-39-65:~# ls
+chefdk_3.1.0-1_amd64.deb  chef-starter.zip      snap
+chef-repo                 loverajarani4091.pem
+root@ip-172-31-39-65:~# cd chef-repo/
+root@ip-172-31-39-65:~/chef-repo# ls
+cookbooks  README.md  roles
+root@ip-172-31-39-65:~/chef-repo# cp /root/loverajarani4091.pem .
+root@ip-172-31-39-65:~/chef-repo# ls
+cookbooks  loverajarani4091.pem  README.md  roles
+root@ip-172-31-39-65:~/chef-repo# 
