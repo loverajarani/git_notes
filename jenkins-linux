@@ -1,0 +1,152 @@
+    1  clear
+    2  cd /usr/
+    3  mkdir java
+    4  cd java
+    5  wget http://download.oracle.com/otn-pub/java/jdk/8u181-b13/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-x64.rpm
+    6  rpm -ivh jdk-8u181-linux-x64.rpm 
+    7  rpm -e jdk-8u181-linux-x64.rpm 
+    8  rpm -ivh jre-8u73-linux-i586.rpm
+    9  ls
+   10  clear
+   11  ls
+   12  wget http://download.oracle.com/otn-pub/java/jdk/8u181-b13-demos/96a7b8442fe848ef90c96a2fad6ed6d1/jdk-8u181-linux-x64-demos.rpm
+   13  ls
+   14  1/58465621]
+   15  [root@ip-172-31-45-70 java]# ls
+   16  clear
+   17  1/58465621]
+   18  [root@ip-172-31-45-70 java]# ls
+   19  wget wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+   20  apt-get update
+   21  ls
+   22  rpm -ivh jdk-8u181-linux-x64-x64.rpm
+   23  rpm -ivh jdk-8u181-linux-x64.rpm
+   24  ls
+   25  cd jdk-8u181-linux-x64.rpm 
+   26  rem -uvh jdk-8u181-linux-x64-demos.rpm
+   27  clear
+   28  wget http://javadl.oracle.com/webapps/download/AutoDL?BundleId=234463_96a7b8442fe848ef90c96a2fad6ed6d1
+   29  ls
+   30  pwd
+   31  java -v
+   32  java -version
+   33  rpm -ivh jdk-8u181-linux-x64.rpm
+   34  clear
+   35  ls
+   36  cd ..
+   37  ls
+   38  cd usr/
+   39  ls
+   40  cd lib
+   41  ls
+   42  cd /etc/profile
+   43  vi /etc/profile
+   44  cd /usr/java/
+   45  ls
+   46  rpm -uvh jdk-8u181-linux-x64.rpm
+   47  [root@ip-172-31-45-70 java]#
+   48  clear
+   49  rpm -ivh jre-9.minor.security.patch_linux-x64_bin.rpm
+   50  clear
+   51  .bash_profile
+   52  ./bash_profile
+   53  cd
+   54  ./bash_profile
+   55  sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+   56  sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+   57  yum install jenkins
+   58  jenkins -v
+   59  service jenkins start/stop/restart
+   60  chkconfig jenkins on
+   61  service jenkins status
+   62  service jenkins start
+   63  service jenkins status
+   64  yum insatll java
+   65  yum install java
+   66  java -version
+   67  cd /usr/java/
+   68  ls
+   69  rm -rf jdk-8u181-linux-x64.rpm
+   70  rm -rf jdk-8u181-linux-x64-demos.rpm 
+   71  rm -rf AutoDL\?BundleId\=234463_96a7b8442fe848ef90c96a2fad6ed6d1 
+   72  ls
+   73  clear
+   74  cd
+   75  java -v
+   76  java -version
+   77  jenkins --version
+   78  jenkins --v
+   79  cd /etc/init.d/jenkins 
+   80  yum remove java
+   81  clear
+   82  java --version
+   83  yum install java-1.8.0-openjdk
+   84  java --version
+   85  java -version
+   86  service jenkins start
+   87  clear
+   88  service jenkins status
+   89  java -version
+   90  jenkins -v
+   91  service jenkins status
+   92  cd /var/lib/jenkins/
+   93  ls
+   94  cd /usr/
+   95  ls
+   96  cd java/
+   97  ls
+   98  cd
+   99  clear
+  100  ls
+  101  firewall-cmd --permanent --new-service=jenkins
+  102  cat /etc/yum.repos.d/jenkins.repo
+  103  firewall-cmd --list-all
+  104  cd /etc/profile.d/
+  105  ls
+  106  cat>jdk.csh
+  107  cat>jdk.sh
+  108  ls
+  109  clear
+  110  firewall-cmd --list-all
+  111  cd
+  112  service jenkins status
+  113  service jenkins stop
+  114  service jenkins restart
+  115  service jenkins status
+  116  yum install tomcat
+  117  service jenkins stop
+  118  rpm -ivh https://pkg.jenkins.io/redhat/jenkins-2.140-1.1.noarch.rpm
+  119  service jenkins start
+  120  ifconfig
+  121  clear
+  122  wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.0.M10/bin/apache-tomcat-9.0.0.M10.tar.gz
+  123  tar xzf apache-tomat-9.0.0.M10.tar.gz
+  124  yum insatll tar
+  125  yum insatll tar*
+  126  yum install tar*
+  127  tar xzf apache-tomat-9.0.0.M10.tar.gz
+  128  ls
+  129  unzip apache-tomcat-9.0.0.M10.tar.gz 
+  130  gunzip -d apache-tomcat-9.0.0.M10.tar.gz 
+  131  ls
+  132  tar xzf apache-tomcat-9.0.0.M10.tar 
+  133  tar xf apache-tomcat-9.0.0.M10.tar 
+  134  ls
+  135  mv apache-tomcat-9.0.0.M10 tamcat9
+  136  ls
+  137  gedit tamcat9/conf/tomcat-users.xml 
+  138  vi tamcat9/conf/tomcat-users.xml 
+  139  ./bin/startup.sh
+  140  . /bin/startup.sh
+  141  cd tamcat9/
+  142  . /bin/startup.sh
+  143  ./bin/startup.sh
+  144  service tomcat status
+  145  ls
+  146  cd bin/
+  147  ls
+  148  service catalina.sh start
+  149  exit
+  150  history
+  151  clear
+  152  history
