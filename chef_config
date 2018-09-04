@@ -1,0 +1,17 @@
+root@ip-172-31-39-65:~/chef-repo/.chef# cat knife.rb
+# See http://docs.chef.io/config_rb_knife.html for more information on knife configuration options
+
+current_dir = File.dirname(__FILE__)
+log_level                :info
+log_location             STDOUT
+node_name                "loverajarani"
+client_key               "#{current_dir}/loverajarani.pem"
+chef_server_url          "https://api.chef.io/organizations/rabidus"
+cookbook_path            ["#{current_dir}/../cookbooks"]
+root@ip-172-31-39-65:~/chef-repo/.chef#
+
+
+
+
+
+
