@@ -79,6 +79,74 @@ root@ip-172-31-39-65:/etc#
 
 
 
+ *****************************IN CHEF_NODE *******************************************
+ 
+ ubuntu@ip-172-31-37-127:~$ cd /etc/
+ubuntu@ip-172-31-37-127:/etc$ cd chef/
+ubuntu@ip-172-31-37-127:/etc/chef$ ls
+chef_guid  client.pem  client.rb  first-boot.json
+ubuntu@ip-172-31-37-127:/etc/chef$ cat chef_guid 
+434c2b93-1f73-4893-896b-56c6a951cc7cubuntu@ip-172-31-37-127:/etc/chef$ 
+ubuntu@ip-172-31-37-127:/etc/chef$ cat client.pem 
+cat: client.pem: Permission denied
+ubuntu@ip-172-31-37-127:/etc/chef$ sudo cat client.pem
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEAyptPsVdU6pJnpPnoFhg3WgS10oGUsb7kDGzw2eR118ywY9Ai
+/uhCleWA3kK3eCdufKkDTGggxJzY7CCjQV3H3M85t/IfI1pJhkSILWjylhluu7nj
+0vpCLgGqm7TmiEpJGWkIIOqx+tZLFXdz2u/zT6wDEQhxRkrQrU0eCytl8/ocar91
+tcjAgd+zsUbat/Q4Cmh2d7lit9PE0vgakjX0Grq7Qo+gOSf+6jIzwBBholZm9Ke6
+c7pk73/90hcGjCHIK+gVpnTDde4LziH4ijY6+F+/IY31/VzlQvO1VpGif7fiZrwR
+KyjiGfia1nZRyvegkujUlMpA3oaNVL/bhCBxoQIDAQABAoIBAQCPj/mqKb2r8U2r
+osEHVuVxzcCght08DY0+GLuZSb8OyKV8NHF3uk/kMxlbZF7ortglUQVbULVXW+SB
+fKbxnGgQWG4Hn3Lc9A8BKvJrat/p59+E+bUrO9VFED0507c+f5TIgpoV6PdwTAQs
+E9ZuHnSD0djiat8I9d5jzi8prvixJRel4ZL2jMgEpjLkLk3TN5hhipPbxSlWaAz8
+t2/+dlOAYX0xFr17hnVz/z5Aehl4FjYrzDn7H/N7KzCHRyT1XL7qPCeLlAZwxjaT
+ax/MntTgoMvAoevoA4B6i8ZEKyWtRjM56JNyzt5rQWRaXG5/3f9bkL7KhTq0fylh
+n4COmsohAoGBAOvjxvvdCjXEsoS0rW5mFCw4h2biaKxsggn1KQpznxya5tSUNMV+
+/ob7+gmNr5M8omxEc/xtbCIie7e9dg3XRfN1D1VpaF6Cu/AF79IFQ/CrmyvNljNJ
+4NfT5ZO0HCSJmGdEqrIR/zKqTq9xz+wE9G1NDAftBuRT/ZYuivPKP/JlAoGBANvh
+JBwseRbooGnAEvIVUMidCjYPZ9C5f/7/4AnKm0kGRxYcAN9eERMk9PluyOAzzbjm
+PFUTsOQsmoqUQuEFYRVAeLWchSrDpn8tsqgMOav6Mza9SOTWFfFq+XFyu6XZZC2G
+OWLqn2W1Ute2zq4IXGaFiK8tZDokq+2FCvD50TCNAoGBALgXeVFSPgecTF24y6je
+zVt9el5Wz63QuOOgirj3ZvNiCEdaqpx+8ZDS0V3nT2Cu72tjOMmFc+Bn3PmWSK2g
+lZzcfG0B6Evp51X4rCLRrSYEJwNWXKQGQgzt97r/0v7Iy0G8myKBXRJjSyksv0HI
+1CEBAiSlXL2QttUf2Z1M9/7pAoGAFSgqs1NMK3oixUooCIcoiMUjkGQXFyxiNoUk
+Z4zJOFOUT3pOUy/X8MGjmMSiK4CQkPQGZiFI6guoqyDs9n3wA316n+75mU3OHXqm
+MClM+1FN0DySYQKAhgRHEDV7/M9YJlE+AFiXEdBKslrytCg1y9+ZcVGqzTVuHaKp
+lNpU2JkCgYEA3kD9jc9IoP0RJfpVG1Gqi7hlN/sl/B5QWyekTj7TrXcikSBHOheL
+RwYt7fzs8Fb+bhKhF+SBWfApRA8VrBwFzwcXLBRmr2RwiB+N49Weu73xo2wnVf0u
+RMXxMv1/iny6v0uIEi2p1h3bLTuBpMsUwY05iXyk2lgDeq6xuw9hf44=
+-----END RSA PRIVATE KEY-----
 
+ubuntu@ip-172-31-37-127:/etc/chef$ cat client.rb 
+chef_server_url  "https://api.chef.io/organizations/rabidus"
+validation_client_name "chef-validator"
+log_location   STDOUT
+node_name "loverajarani"
+
+ubuntu@ip-172-31-37-127:/etc/chef$ cat first-boot.json 
+{"run_list":["recipe[chef_dk]"]}
+ubuntu@ip-172-31-37-127:/etc/chef$ 
+
+
+ubuntu@ip-172-31-37-127:/etc/chef$ cd
+ubuntu@ip-172-31-37-127:~$ cd /var/
+ubuntu@ip-172-31-37-127:/var$ ls
+backups  chef   lib    lock  mail  run   spool
+cache    crash  local  log   opt   snap  tmp
+ubuntu@ip-172-31-37-127:/var$ cd chef/
+ubuntu@ip-172-31-37-127:/var/chef$ ls
+cache
+ubuntu@ip-172-31-37-127:/var/chef$ cd cache/
+ubuntu@ip-172-31-37-127:/var/chef/cache$ ls
+chef-client-running.pid  cookbooks  data_collector_metadata.json
+ubuntu@ip-172-31-37-127:/var/chef/cache$ cat chef-client-running.pid 
+2275ubuntu@ip-172-31-37-127:/var/chef/cache$ 
+ubuntu@ip-172-31-37-127:/var/chef/cache$ cat data_collector_metadata.json 
+{"node_uuid":"434c2b93-1f73-4893-896b-56c6a951cc7c"}ubuntu@ip-172-31-37-127:/var/chef/cache$ 
+ubuntu@ip-172-31-37-127:/var/chef/cache$ cd cookbooks/
+ubuntu@ip-172-31-37-127:/var/chef/cache/cookbooks$ ls
+chef_dk
+ubuntu@ip-172-31-37-127:/var/chef/cache/cookbooks$ 
 
 
