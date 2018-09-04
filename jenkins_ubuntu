@@ -1,3 +1,4 @@
+https://pkg.jenkins.io/debian-stable/
 root@ip-172-31-32-95:~# sudo apt-get update
 Hit:1 http://us-east-2.ec2.archive.ubuntu.com/ubuntu xenial InRelease
 Get:2 http://us-east-2.ec2.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
