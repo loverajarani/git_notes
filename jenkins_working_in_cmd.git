@@ -92,3 +92,38 @@ jenkins.CLI.xml							workflow-libs
 jenkins.install.InstallUtil.lastExecVersion			workspace
 jenkins.install.UpgradeWizard.state
 jenkins@ip-172-31-38-156:~$ 
+
+jenkins@ip-172-31-38-156:~$ cd .ssh/
+jenkins@ip-172-31-38-156:~/.ssh$ ls
+id_rsa	id_rsa.pub
+jenkins@ip-172-31-38-156:~/.ssh$ cat id_rsa
+-----BEGIN RSA PRIVATE KEY-----
+MIIEoQIBAAKCAQEAq2v61GtLJWK+Tk8zzppROsYJRkfddM/EmpCK2+SlSQM2nHKN
+n6+bjiwgzX6PsmaMi+UK5eos7U8F9o/b2RLQej9KVNc7aFWgX/DejatIIgJbAOmW
+xr3TxdtenppNNvvf7jN9t2M9O8NocKIhu+ms9+SA+5KuPw7QGrJyyjVKBGczK3R/
+2+nBaDdUBYR6QgkE//ZTWzXChU3k6mAzX/YqRZdndNRIMhLJ2naM3tLxd1pTNZeS
+RGyUzMzUvvMwA9+BLx7bnMwK1msKSJhIt1xy9/Ov7xCAYTdVWLqmX76KDVwR9dZv
+vuy2sK3iXXe0m5Wl6FtSN/To6/MsSQILuFmnewIDAQABAoIBABNZvxjXe8YenWjt
+m+WImf7OeCGM3zzeb00bX/FuoBHb4QBMFhyekCq+ZH2N+d6joN3x3wcRJj0rnHq2
+xpR8gTgriNKG8VfXwqDR6e2IFj5wkaFKvRB2QT+mgcnZlTnNuPuEqH5ZH4Jtjo6Y
+XsJ9oF7jVoQPjMflfixlVHvrBA33AQzCsyIf0E/KbIjpO3h5HFgJNzhb5/aaEOf8
+Y8wYNMGh/theqVjLqgoXmKNs90iEi7mfBB8C8QNSLiVHdTZLnmkiyZxheTeTNw6G
+HugMQhWJwH5QuCWr19tKC5TWRvymJ3pLWiVlgN8fNm9WL0EmnQD+Pucu6/fiulAh
+rqyWbxECgYEA1Kw0Af6zh/H5rs/nTKD4EH9iRjaogNDHCGZRhXM9BhTV2VGbvvs+
+Ls2eXcebqxedDFHxKy1P/vLxVkys7vmj4D3Eud+YV7B/QMoEHs8G7MOTnzXyoZtp
+FWyZStycERok7vpYmHwEH+PtpZ4vOJt3HhrnunR3CjlIG7+wRau+nDUCgYEAzlhd
+ocEmXFs5aZNCpB+O4ptghGcXPv0OP8IXi6Zoal9yBNEE2PXg5VGUnJyGJbnI5Tss
+Hws9hwgMBvFsTSjuttsGknA0i1E68GX4Hp7u9B0giAkChF+nt5zkAleJ4AmrH+v1
+1QVTXhjOt5J79GBA6+QKDevYj8XiSR5ktW4Uyu8Cfzh9hVMCVK3HmIrWrpmsKDg5
+neEIo7mTu0p/4yePdKYo4qTXCIeyNNI5y9cdLjxECXM8UNMnNhiCb5h8xXK03NKz
+lY3J1q10NFkBUBbe5vf8+zlPGyPSJBeMwSshblMcnrLbzKy0RGQ0JuvXGLPwl7Nn
+ciYUyYntrTmxsSDQfdECgYAeAJk0oLnsKdNyN1g0NuZ2qnLhLYAix3af7J+xzXNX
+LCOO8blLtoyJq0/5aYTTzWyZb/4dUWwTyya8h7PgkDgNXFFbT3dEXn48YAcwpJlH
+40hMn0q/Zo0jVGuOr527doxsKsnmvEx/3QmJhYICaVBnPBP+LDGjzfj1+rZX7vaU
+/wKBgQCX71BKr1DhZcx42OlS75Aex79CSNmkIOdC06CXSUzMR0Jg3rcFSYayD2gd
+THlZqaWggVvkd8ai04oED0wh5RfpZZvInbhavfxEFg8BuTteZevxPIXriAY5ZLDu
+REPiLwSCQ1UGfEjqLLUwVGuoP1ngZSTjk7Rt1fyqqLWNh3ftVA==
+-----END RSA PRIVATE KEY-----
+jenkins@ip-172-31-38-156:~/.ssh$ cat id_rsa.pub 
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCra/rUa0slYr5OTzPOmlE6xglGR910z8SakIrb5KVJAzacco2fr5uOLCDNfo+yZoyL5Qrl6iztTwX2j9vZEtB6P0pU1ztoVaBf8N6Nq0giAlsA6ZbGvdPF216emk02+9/uM323Yz07w2hwoiG76az35ID7kq4/DtAasnLKNUoEZzMrdH/b6cFoN1QFhHpCCQT/9lNbNcKFTeTqYDNf9ipFl2d01EgyEsnadoze0vF3WlM1l5JEbJTMzNS+8zAD34EvHtuczArWawpImEi3XHL386/vEIBhN1VYuqZfvooNXBH11m++7LawreJdd7SblaXoW1I39Ojr8yxJAgu4Wad7 jenkins@ip-172-31-38-156
+jenkins@ip-172-31-38-156:~/.ssh$ 
