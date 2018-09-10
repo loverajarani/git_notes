@@ -1,0 +1,94 @@
+root@ip-172-31-38-156:/var/lib/jenkins# su jenkins
+jenkins@ip-172-31-38-156:~$ pwd
+/var/lib/jenkins
+jenkins@ip-172-31-38-156:~$ ls
+config.xml							jobs
+credentials.xml							logs
+github-plugin-configuration.xml					nodeMonitors.xml
+hudson.model.UpdateCenter.xml					nodes
+hudson.plugins.build_timeout.operations.BuildStepOperation.xml	org.jenkinsci.plugins.pipeline.modeldefinition.config.GlobalConfig.xml
+hudson.plugins.emailext.ExtendedEmailPublisher.xml		org.jenkinsci.plugins.workflow.flow.GlobalDefaultFlowDurabilityLevel.xml
+hudson.plugins.git.GitSCM.xml					org.jenkinsci.plugins.workflow.libs.GlobalLibraries.xml
+hudson.plugins.git.GitTool.xml					plugins
+hudson.plugins.timestamper.TimestamperConfig.xml		queue.xml.bak
+hudson.scm.SubversionSCM.xml					scriptApproval.xml
+hudson.tasks.Mailer.xml						secret.key
+hudson.tasks.Shell.xml						secret.key.not-so-secret
+hudson.triggers.SCMTrigger.xml					secrets
+identity.key.enc						updates
+jenkins.CLI.xml							userContent
+jenkins.install.InstallUtil.lastExecVersion			users
+jenkins.install.UpgradeWizard.state				workflow-libs
+jenkins.model.ArtifactManagerConfiguration.xml			workspace
+jenkins.model.JenkinsLocationConfiguration.xml
+jenkins@ip-172-31-38-156:~$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/var/lib/jenkins/.ssh/id_rsa): 
+Created directory '/var/lib/jenkins/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /var/lib/jenkins/.ssh/id_rsa.
+Your public key has been saved in /var/lib/jenkins/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:00XVW36rrXNt3k31QcBTC8/hbkFkt6PtrxcldHH7AbQ jenkins@ip-172-31-38-156
+The key's randomart image is:
++---[RSA 2048]----+
+|            +*+O+|
+|           . o% @|
+|            .E.#o|
+|         . .  *.O|
+|        S .  . **|
+|         .    oo+|
+|              o.=|
+|             o +B|
+|             .===|
++----[SHA256]-----+
+jenkins@ip-172-31-38-156:~$ ls -a
+.								jenkins.model.ArtifactManagerConfiguration.xml
+..								jenkins.model.JenkinsLocationConfiguration.xml
+.cache								jobs
+config.xml							logs
+credentials.xml							nodeMonitors.xml
+github-plugin-configuration.xml					nodes
+.groovy								org.jenkinsci.plugins.pipeline.modeldefinition.config.GlobalConfig.xml
+hudson.model.UpdateCenter.xml					org.jenkinsci.plugins.workflow.flow.GlobalDefaultFlowDurabilityLevel.xml
+hudson.plugins.build_timeout.operations.BuildStepOperation.xml	org.jenkinsci.plugins.workflow.libs.GlobalLibraries.xml
+hudson.plugins.emailext.ExtendedEmailPublisher.xml		plugins
+hudson.plugins.git.GitSCM.xml					queue.xml.bak
+hudson.plugins.git.GitTool.xml					scriptApproval.xml
+hudson.plugins.timestamper.TimestamperConfig.xml		secret.key
+hudson.scm.SubversionSCM.xml					secret.key.not-so-secret
+hudson.tasks.Mailer.xml						secrets
+hudson.tasks.Shell.xml						.ssh
+hudson.triggers.SCMTrigger.xml					updates
+identity.key.enc						userContent
+.java								users
+jenkins.CLI.xml							workflow-libs
+jenkins.install.InstallUtil.lastExecVersion			workspace
+jenkins.install.UpgradeWizard.state
+jenkins@ip-172-31-38-156:~$ 
+
+jenkins@ip-172-31-38-156:~$ ls -a
+.								jenkins.model.ArtifactManagerConfiguration.xml
+..								jenkins.model.JenkinsLocationConfiguration.xml
+.cache								jobs
+config.xml							logs
+credentials.xml							nodeMonitors.xml
+github-plugin-configuration.xml					nodes
+.groovy								org.jenkinsci.plugins.pipeline.modeldefinition.config.GlobalConfig.xml
+hudson.model.UpdateCenter.xml					org.jenkinsci.plugins.workflow.flow.GlobalDefaultFlowDurabilityLevel.xml
+hudson.plugins.build_timeout.operations.BuildStepOperation.xml	org.jenkinsci.plugins.workflow.libs.GlobalLibraries.xml
+hudson.plugins.emailext.ExtendedEmailPublisher.xml		plugins
+hudson.plugins.git.GitSCM.xml					queue.xml.bak
+hudson.plugins.git.GitTool.xml					scriptApproval.xml
+hudson.plugins.timestamper.TimestamperConfig.xml		secret.key
+hudson.scm.SubversionSCM.xml					secret.key.not-so-secret
+hudson.tasks.Mailer.xml						secrets
+hudson.tasks.Shell.xml						.ssh
+hudson.triggers.SCMTrigger.xml					updates
+identity.key.enc						userContent
+.java								users
+jenkins.CLI.xml							workflow-libs
+jenkins.install.InstallUtil.lastExecVersion			workspace
+jenkins.install.UpgradeWizard.state
+jenkins@ip-172-31-38-156:~$ 
