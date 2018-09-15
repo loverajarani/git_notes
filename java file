@@ -1,0 +1,203 @@
+root@admin:~# wget http://mirrors.wuchna.com/apachemirror/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
+--2018-09-15 09:50:15--  http://mirrors.wuchna.com/apachemirror/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz
+Resolving mirrors.wuchna.com (mirrors.wuchna.com)... 206.189.140.211
+Connecting to mirrors.wuchna.com (mirrors.wuchna.com)|206.189.140.211|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 8842660 (8.4M) [application/x-gzip]
+Saving to: ‘apache-maven-3.5.4-bin.tar.gz’
+
+100%[======================================>] 88,42,660   10.8MB/s   in 0.8s   
+
+2018-09-15 09:50:16 (10.8 MB/s) - ‘apache-maven-3.5.4-bin.tar.gz’ saved [8842660/8842660]
+
+root@admin:~# ls
+apache-maven-3.5.4-bin.tar.gz  git		       qhavi
+apache-tomcat-7.0.86	       github		       README.md
+chefdk_2.5.3-1_amd64.deb       jenkins_2.89.4_all.deb  sai
+demo1.txt		       lklk		       sample.txt
+demo2.txt		       nagiosxi		       vinay
+file.txt		       ohone		       xi-latest.tar.gz
+root@admin:~# tar -xvzf apache-maven-3.5.4-bin.tar.gz 
+apache-maven-3.5.4/README.txt
+apache-maven-3.5.4/LICENSE
+apache-maven-3.5.4/NOTICE
+apache-maven-3.5.4/lib/
+apache-maven-3.5.4/lib/cdi-api.license
+apache-maven-3.5.4/lib/commons-cli.license
+apache-maven-3.5.4/lib/commons-io.license
+apache-maven-3.5.4/lib/commons-lang3.license
+apache-maven-3.5.4/lib/jcl-over-slf4j.license
+apache-maven-3.5.4/lib/jsr250-api.license
+apache-maven-3.5.4/lib/maven-artifact.license
+apache-maven-3.5.4/lib/maven-builder-support.license
+apache-maven-3.5.4/lib/maven-compat.license
+apache-maven-3.5.4/lib/maven-core.license
+apache-maven-3.5.4/lib/maven-embedder.license
+apache-maven-3.5.4/lib/maven-model-builder.license
+apache-maven-3.5.4/lib/maven-model.license
+apache-maven-3.5.4/lib/maven-plugin-api.license
+apache-maven-3.5.4/lib/maven-repository-metadata.license
+apache-maven-3.5.4/lib/maven-resolver-api.license
+apache-maven-3.5.4/lib/maven-resolver-connector-basic.license
+apache-maven-3.5.4/lib/maven-resolver-impl.license
+apache-maven-3.5.4/lib/maven-resolver-provider.license
+apache-maven-3.5.4/lib/maven-resolver-spi.license
+apache-maven-3.5.4/lib/maven-resolver-transport-wagon.license
+apache-maven-3.5.4/lib/maven-resolver-util.license
+apache-maven-3.5.4/lib/maven-settings-builder.license
+apache-maven-3.5.4/lib/maven-settings.license
+apache-maven-3.5.4/lib/maven-shared-utils.license
+apache-maven-3.5.4/lib/maven-slf4j-provider.license
+apache-maven-3.5.4/lib/org.eclipse.sisu.inject.license
+apache-maven-3.5.4/lib/org.eclipse.sisu.plexus.license
+apache-maven-3.5.4/lib/plexus-cipher.license
+apache-maven-3.5.4/lib/plexus-component-annotations.license
+apache-maven-3.5.4/lib/plexus-interpolation.license
+apache-maven-3.5.4/lib/plexus-sec-dispatcher.license
+apache-maven-3.5.4/lib/plexus-utils.license
+apache-maven-3.5.4/lib/slf4j-api.license
+apache-maven-3.5.4/lib/wagon-file.license
+apache-maven-3.5.4/lib/wagon-http.license
+apache-maven-3.5.4/lib/wagon-provider-api.license
+apache-maven-3.5.4/lib/jansi-native/
+apache-maven-3.5.4/lib/jansi-native/freebsd32/
+apache-maven-3.5.4/lib/jansi-native/freebsd64/
+apache-maven-3.5.4/lib/jansi-native/linux32/
+apache-maven-3.5.4/lib/jansi-native/linux64/
+apache-maven-3.5.4/lib/jansi-native/osx/
+apache-maven-3.5.4/lib/jansi-native/windows32/
+apache-maven-3.5.4/lib/jansi-native/windows64/
+apache-maven-3.5.4/lib/jansi-native/freebsd32/libjansi.so
+apache-maven-3.5.4/lib/jansi-native/freebsd64/libjansi.so
+apache-maven-3.5.4/lib/jansi-native/linux32/libjansi.so
+apache-maven-3.5.4/lib/jansi-native/linux64/libjansi.so
+apache-maven-3.5.4/lib/jansi-native/osx/libjansi.jnilib
+apache-maven-3.5.4/lib/jansi-native/windows32/jansi.dll
+apache-maven-3.5.4/lib/jansi-native/windows64/jansi.dll
+apache-maven-3.5.4/bin/m2.conf
+apache-maven-3.5.4/bin/mvn.cmd
+apache-maven-3.5.4/bin/mvnDebug.cmd
+apache-maven-3.5.4/bin/mvn
+apache-maven-3.5.4/bin/mvnDebug
+apache-maven-3.5.4/bin/mvnyjp
+apache-maven-3.5.4/conf/
+apache-maven-3.5.4/conf/logging/
+apache-maven-3.5.4/conf/logging/simplelogger.properties
+apache-maven-3.5.4/conf/settings.xml
+apache-maven-3.5.4/conf/toolchains.xml
+apache-maven-3.5.4/lib/ext/
+apache-maven-3.5.4/lib/jansi-native/
+apache-maven-3.5.4/lib/ext/README.txt
+apache-maven-3.5.4/lib/jansi-native/README.txt
+apache-maven-3.5.4/boot/plexus-classworlds-2.5.2.jar
+apache-maven-3.5.4/lib/maven-embedder-3.5.4.jar
+apache-maven-3.5.4/lib/maven-settings-3.5.4.jar
+apache-maven-3.5.4/lib/plexus-utils-3.1.0.jar
+apache-maven-3.5.4/lib/maven-settings-builder-3.5.4.jar
+apache-maven-3.5.4/lib/maven-builder-support-3.5.4.jar
+apache-maven-3.5.4/lib/commons-lang3-3.5.jar
+apache-maven-3.5.4/lib/plexus-interpolation-1.24.jar
+apache-maven-3.5.4/lib/plexus-component-annotations-1.7.1.jar
+apache-maven-3.5.4/lib/plexus-sec-dispatcher-1.4.jar
+apache-maven-3.5.4/lib/plexus-cipher-1.7.jar
+apache-maven-3.5.4/lib/maven-core-3.5.4.jar
+apache-maven-3.5.4/lib/maven-model-3.5.4.jar
+apache-maven-3.5.4/lib/maven-repository-metadata-3.5.4.jar
+apache-maven-3.5.4/lib/maven-artifact-3.5.4.jar
+apache-maven-3.5.4/lib/maven-plugin-api-3.5.4.jar
+apache-maven-3.5.4/lib/org.eclipse.sisu.plexus-0.3.3.jar
+apache-maven-3.5.4/lib/cdi-api-1.0.jar
+apache-maven-3.5.4/lib/jsr250-api-1.0.jar
+apache-maven-3.5.4/lib/javax.inject-1.jar
+apache-maven-3.5.4/lib/org.eclipse.sisu.inject-0.3.3.jar
+apache-maven-3.5.4/lib/maven-model-builder-3.5.4.jar
+apache-maven-3.5.4/lib/guava-20.0.jar
+apache-maven-3.5.4/lib/maven-resolver-provider-3.5.4.jar
+apache-maven-3.5.4/lib/maven-resolver-api-1.1.1.jar
+apache-maven-3.5.4/lib/maven-resolver-spi-1.1.1.jar
+apache-maven-3.5.4/lib/maven-resolver-util-1.1.1.jar
+apache-maven-3.5.4/lib/maven-resolver-impl-1.1.1.jar
+apache-maven-3.5.4/lib/maven-shared-utils-3.2.1.jar
+apache-maven-3.5.4/lib/commons-io-2.5.jar
+apache-maven-3.5.4/lib/guice-4.2.0-no_aop.jar
+apache-maven-3.5.4/lib/aopalliance-1.0.jar
+apache-maven-3.5.4/lib/slf4j-api-1.7.25.jar
+apache-maven-3.5.4/lib/commons-cli-1.4.jar
+apache-maven-3.5.4/lib/maven-compat-3.5.4.jar
+apache-maven-3.5.4/lib/wagon-provider-api-3.1.0.jar
+apache-maven-3.5.4/lib/wagon-http-3.1.0-shaded.jar
+apache-maven-3.5.4/lib/jcl-over-slf4j-1.7.25.jar
+apache-maven-3.5.4/lib/wagon-file-3.1.0.jar
+apache-maven-3.5.4/lib/maven-resolver-connector-basic-1.1.1.jar
+apache-maven-3.5.4/lib/maven-resolver-transport-wagon-1.1.1.jar
+apache-maven-3.5.4/lib/maven-slf4j-provider-3.5.4.jar
+apache-maven-3.5.4/lib/jansi-1.17.1.jar
+root@admin:~# clear
+
+root@admin:~# ls
+apache-maven-3.5.4	       git		       README.md
+apache-maven-3.5.4-bin.tar.gz  github		       sai
+apache-tomcat-7.0.86	       jenkins_2.89.4_all.deb  sample.txt
+chefdk_2.5.3-1_amd64.deb       lklk		       vinay
+demo1.txt		       nagiosxi		       xi-latest.tar.gz
+demo2.txt		       ohone
+file.txt		       qhavi
+root@admin:~# mvn -v
+Apache Maven 3.5.2 (138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T13:28:13+05:30)
+Maven home: /usr/local/apache-maven
+Java version: 1.8.0_181, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-8-oracle/jre
+Default locale: en_IN, platform encoding: UTF-8
+OS name: "linux", version: "4.4.0-104-generic", arch: "amd64", family: "unix"
+root@admin:~# pwd
+/root
+root@admin:~# mkdir java_project
+root@admin:~# cd java_project/
+root@admin:~/java_project# touch hello.java
+root@admin:~/java_project# vi hello.java 
+root@admin:~/java_project# javac hello.java 
+hello.java:3: error: class MainClass is public, should be declared in a file named MainClass.java
+public class MainClass {
+       ^
+1 error
+root@admin:~/java_project# vi hello.java 
+root@admin:~/java_project# vi hello.java 
+root@admin:~/java_project# javac hello.java 
+root@admin:~/java_project# ls
+hello.class  hello.java
+root@admin:~/java_project# java hello.java
+Error: Could not find or load main class hello.java
+root@admin:~/java_project# java hello
+Sorted array: [length: 10]
+-9, -7, -3, -2, 0, 2, 4, 5, 6, 8
+Found 2 @ 5
+root@admin:~/java_project# 
+
+
+
+vi hello.java
+
+
+import java.util.Arrays;
+
+public class hello {
+   public static void main(String args[]) throws Exception {
+      int array[] = { 2, 5, -2, 6, -3, 8, 0, -7, -9, 4 };
+      Arrays.sort(array);
+      printArray("Sorted array", array);
+      int index = Arrays.binarySearch(array, 2);
+      System.out.println("Found 2 @ " + index);
+   }
+   private static void printArray(String message, int array[]) {
+      System.out.println(message + ": [length: " + array.length + "]");
+
+      for (int i = 0; i < array.length; i++) {
+         if(i != 0) {
+            System.out.print(", ");
+         }
+         System.out.print(array[i]);
+      }
+      System.out.println();
+   }
+}
+~                        
