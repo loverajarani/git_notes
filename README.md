@@ -17,3 +17,8 @@ sudo apt-get update && sudo apt-get -V upgrade
 
 
 ******************* https://www.tutorialspoint.com/jenkins/jenkins_git_setup.htm *****************
+
+******************* for any linux related iso images ******************************************
+http://iso.linuxquestions.org/
+
+
