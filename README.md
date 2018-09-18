@@ -22,3 +22,9 @@ sudo apt-get update && sudo apt-get -V upgrade
 http://iso.linuxquestions.org/
 
 
+************************** TO CHANGE JENKINS PORT ***************************
+
+java -jar jenkins.war --httpPort=8282
+
+C:\Program Files (x86)\Jenkins\jenkins.xml
+C:\Users\welcome\.jenkins\
