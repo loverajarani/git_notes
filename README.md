@@ -1,5 +1,9 @@
 # git_notes
 git related issues and notes
+*************************************** chef starter kit moving ************
+rajarani@rajarani:~/Downloads$ scp -i kavitha_awskey.pem chef-starter.zip ubuntu@18.224.37.82:/tmp
+
+
 Listen <%=node["port"]%>------------------------>write in metadata.rb
 Listen <%=node["secureport"]%>
 https://help.ubuntu.com/community/ListOfOpenSourcePrograms
