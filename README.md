@@ -119,3 +119,8 @@ PREFIX=/$NAME
 
 JENKINS_ARGS="--webroot=/var/cache/$NAME/war --httpPort=$HTTP_PORT"
 root@admin:/etc/default# 
+
+*********************** INSTALL STEPS IN UBUNTU APACHE TOMCAT **************************
+
+https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-ubuntu-16-04
+
