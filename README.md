@@ -107,6 +107,12 @@ MAXOPENFILES=8192
 # port for HTTP connector (default 8080; disable with -1)
 HTTP_PORT=8282
 
+********************************** PUTTY COPY& PASTE OPERATIONS ************************************
+https://www.ssh.com/ssh/putty/putty-manuals/0.68/Chapter3.html#using-selection
+https://www.ssh.com/ssh/putty/putty-manuals/0.68/Chapter4.html#config-mouse
+https://help.skytap.com/ssh-sra-configuring-OS.html
+https://help.skytap.com/VMClient.html
+
 
 # servlet context, important if you want to use apache proxying
 PREFIX=/$NAME
