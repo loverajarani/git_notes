@@ -1,0 +1,621 @@
+Authenticating with public key "imported-openssh-key"
+     ┌────────────────────────────────────────────────────────────────────┐
+     │                        • MobaXterm 10.8 •                          │
+     │            (SSH client, X-server and networking tools)             │
+     │                                                                    │
+     │ ➤ SSH session to ec2-user@54.86.77.254                             │
+     │   • SSH compression : ✔                                            │
+     │   • SSH-browser     : ✔                                            │
+     │   • X11-forwarding  : ✘  (disabled or not supported by server)     │
+     │   • DISPLAY         : 192.168.0.116:0.0                            │
+     │                                                                    │
+     │ ➤ For more info, ctrl+click on help or visit our website           │
+     └────────────────────────────────────────────────────────────────────┘
+
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+11 package(s) needed for security, out of 20 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-172-31-90-44 ~]$ ls
+[ec2-user@ip-172-31-90-44 ~]$ sudo -i
+[root@ip-172-31-90-44 ~]# java -version
+java version "1.7.0_181"
+OpenJDK Runtime Environment (amzn-2.6.14.8.80.amzn1-x86_64 u181-b00)
+OpenJDK 64-Bit Server VM (build 24.181-b00, mixed mode)
+[root@ip-172-31-90-44 ~]# clear
+[root@ip-172-31-90-44 ~]# java -version
+java version "1.7.0_181"
+OpenJDK Runtime Environment (amzn-2.6.14.8.80.amzn1-x86_64 u181-b00)
+OpenJDK 64-Bit Server VM (build 24.181-b00, mixed mode)
+[root@ip-172-31-90-44 ~]# sudo yum remove java-1.7.0-openjdk
+Loaded plugins: priorities, update-motd, upgrade-helper
+Resolving Dependencies
+--> Running transaction check
+---> Package java-1.7.0-openjdk.x86_64 1:1.7.0.181-2.6.14.8.80.amzn1 will be erased
+--> Processing Dependency: jre >= 1.6.0 for package: aws-apitools-mon-1.0.20.0-1.0.amzn1.noarch
+--> Processing Dependency: jre >= 1.6.0 for package: aws-apitools-elb-1.0.35.0-1.0.amzn1.noarch
+--> Processing Dependency: jre >= 1.6.0 for package: aws-apitools-common-1.1.0-1.9.amzn1.noarch
+--> Processing Dependency: jre >= 1.6.0 for package: aws-apitools-ec2-1.7.3.0-1.0.amzn1.noarch
+--> Processing Dependency: jre >= 1.6.0 for package: aws-apitools-as-1.0.61.6-1.0.amzn1.noarch
+--> Running transaction check
+---> Package aws-apitools-as.noarch 0:1.0.61.6-1.0.amzn1 will be erased
+---> Package aws-apitools-common.noarch 0:1.1.0-1.9.amzn1 will be erased
+---> Package aws-apitools-ec2.noarch 0:1.7.3.0-1.0.amzn1 will be erased
+---> Package aws-apitools-elb.noarch 0:1.0.35.0-1.0.amzn1 will be erased
+---> Package aws-apitools-mon.noarch 0:1.0.20.0-1.0.amzn1 will be erased
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+===========================================================================================================
+ Package                     Arch           Version                                Repository         Size
+===========================================================================================================
+Removing:
+ java-1.7.0-openjdk          x86_64         1:1.7.0.181-2.6.14.8.80.amzn1          installed          91 M
+Removing for dependencies:
+ aws-apitools-as             noarch         1.0.61.6-1.0.amzn1                     installed         7.1 M
+ aws-apitools-common         noarch         1.1.0-1.9.amzn1                        installed         915
+ aws-apitools-ec2            noarch         1.7.3.0-1.0.amzn1                      installed          17 M
+ aws-apitools-elb            noarch         1.0.35.0-1.0.amzn1                     installed         7.8 M
+ aws-apitools-mon            noarch         1.0.20.0-1.0.amzn1                     installed         6.9 M
+
+Transaction Summary
+===========================================================================================================
+Remove  1 Package (+5 Dependent packages)
+
+Installed size: 130 M
+Is this ok [y/N]: y
+Downloading packages:
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Erasing    : aws-apitools-mon-1.0.20.0-1.0.amzn1.noarch                                              1/6
+  Erasing    : aws-apitools-as-1.0.61.6-1.0.amzn1.noarch                                               2/6
+  Erasing    : aws-apitools-elb-1.0.35.0-1.0.amzn1.noarch                                              3/6
+  Erasing    : aws-apitools-ec2-1.7.3.0-1.0.amzn1.noarch                                               4/6
+  Erasing    : aws-apitools-common-1.1.0-1.9.amzn1.noarch                                              5/6
+  Erasing    : 1:java-1.7.0-openjdk-1.7.0.181-2.6.14.8.80.amzn1.x86_64                                 6/6
+  Verifying  : 1:java-1.7.0-openjdk-1.7.0.181-2.6.14.8.80.amzn1.x86_64                                 1/6
+  Verifying  : aws-apitools-common-1.1.0-1.9.amzn1.noarch                                              2/6
+  Verifying  : aws-apitools-ec2-1.7.3.0-1.0.amzn1.noarch                                               3/6
+  Verifying  : aws-apitools-elb-1.0.35.0-1.0.amzn1.noarch                                              4/6
+  Verifying  : aws-apitools-as-1.0.61.6-1.0.amzn1.noarch                                               5/6
+  Verifying  : aws-apitools-mon-1.0.20.0-1.0.amzn1.noarch                                              6/6
+
+Removed:
+  java-1.7.0-openjdk.x86_64 1:1.7.0.181-2.6.14.8.80.amzn1
+
+Dependency Removed:
+  aws-apitools-as.noarch 0:1.0.61.6-1.0.amzn1          aws-apitools-common.noarch 0:1.1.0-1.9.amzn1
+  aws-apitools-ec2.noarch 0:1.7.3.0-1.0.amzn1          aws-apitools-elb.noarch 0:1.0.35.0-1.0.amzn1
+  aws-apitools-mon.noarch 0:1.0.20.0-1.0.amzn1
+
+Complete!
+[root@ip-172-31-90-44 ~]# sudo yum install java-1.8.0-openjdk
+Loaded plugins: priorities, update-motd, upgrade-helper
+Resolving Dependencies
+--> Running transaction check
+---> Package java-1.8.0-openjdk.x86_64 1:1.8.0.181-8.b13.39.39.amzn1 will be installed
+--> Processing Dependency: java-1.8.0-openjdk-headless(x86-64) = 1:1.8.0.181-8.b13.39.39.amzn1 for package: 1:java-1.8.0-openjdk-1.8.0.181-8.b13.39.39.amzn1.x86_64
+--> Processing Dependency: libjvm.so(SUNWprivate_1.1)(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.181-8.b13.39.39.amzn1.x86_64
+--> Processing Dependency: libjava.so(SUNWprivate_1.1)(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.181-8.b13.39.39.amzn1.x86_64
+--> Processing Dependency: libjvm.so()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.181-8.b13.39.39.amzn1.x86_64
+--> Processing Dependency: libjava.so()(64bit) for package: 1:java-1.8.0-openjdk-1.8.0.181-8.b13.39.39.amzn1.x86_64
+--> Running transaction check
+---> Package java-1.8.0-openjdk-headless.x86_64 1:1.8.0.181-8.b13.39.39.amzn1 will be installed
+amzn-main/latest/filelists_db                                                       | 5.7 MB  00:00:00
+amzn-updates/latest/filelists_db                                                    | 3.5 MB  00:00:01
+--> Processing Dependency: copy-jdk-configs >= 1.1-3 for package: 1:java-1.8.0-openjdk-headless-1.8.0.181-8.b13.39.39.amzn1.x86_64
+--> Processing Dependency: lksctp-tools(x86-64) for package: 1:java-1.8.0-openjdk-headless-1.8.0.181-8.b13.39.39.amzn1.x86_64
+--> Running transaction check
+---> Package copy-jdk-configs.noarch 0:3.3-10.3.amzn1 will be installed
+---> Package lksctp-tools.x86_64 0:1.0.10-7.7.amzn1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+===========================================================================================================
+ Package                          Arch        Version                              Repository         Size
+===========================================================================================================
+Installing:
+ java-1.8.0-openjdk               x86_64      1:1.8.0.181-8.b13.39.39.amzn1        amzn-updates      253 k
+Installing for dependencies:
+ copy-jdk-configs                 noarch      3.3-10.3.amzn1                       amzn-updates       21 k
+ java-1.8.0-openjdk-headless      x86_64      1:1.8.0.181-8.b13.39.39.amzn1        amzn-updates       39 M
+ lksctp-tools                     x86_64      1.0.10-7.7.amzn1                     amzn-main          89 k
+
+Transaction Summary
+===========================================================================================================
+Install  1 Package (+3 Dependent packages)
+
+Total download size: 39 M
+Installed size: 104 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/4): copy-jdk-configs-3.3-10.3.amzn1.noarch.rpm                                   |  21 kB  00:00:00
+(2/4): java-1.8.0-openjdk-1.8.0.181-8.b13.39.39.amzn1.x86_64.rpm                    | 253 kB  00:00:00
+(3/4): lksctp-tools-1.0.10-7.7.amzn1.x86_64.rpm                                     |  89 kB  00:00:00
+(4/4): java-1.8.0-openjdk-headless-1.8.0.181-8.b13.39.39.amzn1.x86_64.rpm           |  39 MB  00:00:04
+-----------------------------------------------------------------------------------------------------------
+Total                                                                      8.8 MB/s |  39 MB  00:00:04
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : lksctp-tools-1.0.10-7.7.amzn1.x86_64                                                    1/4
+  Installing : copy-jdk-configs-3.3-10.3.amzn1.noarch                                                  2/4
+  Installing : 1:java-1.8.0-openjdk-headless-1.8.0.181-8.b13.39.39.amzn1.x86_64                        3/4
+  Installing : 1:java-1.8.0-openjdk-1.8.0.181-8.b13.39.39.amzn1.x86_64                                 4/4
+  Verifying  : copy-jdk-configs-3.3-10.3.amzn1.noarch                                                  1/4
+  Verifying  : lksctp-tools-1.0.10-7.7.amzn1.x86_64                                                    2/4
+  Verifying  : 1:java-1.8.0-openjdk-1.8.0.181-8.b13.39.39.amzn1.x86_64                                 3/4
+  Verifying  : 1:java-1.8.0-openjdk-headless-1.8.0.181-8.b13.39.39.amzn1.x86_64                        4/4
+
+Installed:
+  java-1.8.0-openjdk.x86_64 1:1.8.0.181-8.b13.39.39.amzn1
+
+Dependency Installed:
+  copy-jdk-configs.noarch 0:3.3-10.3.amzn1
+  java-1.8.0-openjdk-headless.x86_64 1:1.8.0.181-8.b13.39.39.amzn1
+  lksctp-tools.x86_64 0:1.0.10-7.7.amzn1
+
+Complete!
+[root@ip-172-31-90-44 ~]# update-alternatives --config java
+
+There is 1 program that provides 'java'.
+
+  Selection    Command
+-----------------------------------------------
+*+ 1           /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/java
+
+Enter to keep the current selection[+], or type selection number:
+[root@ip-172-31-90-44 ~]# /usr/sbin/alternatives --config java
+
+There is 1 program that provides 'java'.
+
+  Selection    Command
+-----------------------------------------------
+*+ 1           /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/java
+
+Enter to keep the current selection[+], or type selection number:
+[root@ip-172-31-90-44 ~]# /usr/sbin/alternatives --config javac
+[root@ip-172-31-90-44 ~]# java -version
+openjdk version "1.8.0_181"
+OpenJDK Runtime Environment (build 1.8.0_181-b13)
+OpenJDK 64-Bit Server VM (build 25.181-b13, mixed mode)
+[root@ip-172-31-90-44 ~]# clear
+[root@ip-172-31-90-44 ~]# ls
+[root@ip-172-31-90-44 ~]# java -version
+openjdk version "1.8.0_181"
+OpenJDK Runtime Environment (build 1.8.0_181-b13)
+OpenJDK 64-Bit Server VM (build 25.181-b13, mixed mode)
+[root@ip-172-31-90-44 ~]# vi /etc
+[root@ip-172-31-90-44 ~]# cd  /etc
+[root@ip-172-31-90-44 etc]# ls
+acpi                       dumpdates            krb5.conf       passwd-           services
+adjtime                    e2fsck.conf          krb5.conf.d     pkcs11            sestatus.conf
+aliases                    environment          ld.so.cache     pki               shadow
+aliases.db                 ethers               ld.so.conf      pm                shadow-
+alternatives               exports              ld.so.conf.d    popt.d            shells
+amazon                     exports.d            libaudit.conf   ppp               skel
+anacrontab                 filesystems          libreport       prelink.conf.d    smrsh
+asound.conf                fonts                libuser.conf    printcap          ssh
+at.deny                    fstab                localtime       profile           ssl
+audisp                     gcrypt               login.defs      profile.d         statetab
+audit                      gnupg                logrotate.conf  protocols         statetab.d
+bash_completion.d          GREP_COLORS          logrotate.d     rc                sudo.conf
+bashrc                     groff                lvm             rc0.d             sudoers
+blkid                      group                magic           rc1.d             sudoers.d
+cgconfig.conf              group-               mail            rc2.d             sudo-ldap.conf
+cgrules.conf               grub.conf            mailcap         rc3.d             sysconfig
+cgsnapshot_blacklist.conf  gshadow              man_db.conf     rc4.d             sysctl.conf
+chkconfig.d                gshadow-             maven           rc5.d             sysctl.d
+cloud                      gss                  mime.types      rc6.d             system-release
+cron.d                     gssapi_mech.conf     mke2fs.conf     rc.d              system-release-cpe
+cron.daily                 hibagent-config.cfg  modprobe.d      rc.local          terminfo
+cron.deny                  host.conf            motd            rc.sysinit        tmpfiles.d
+cron.hourly                hosts                motd.rpmsave    request-key.conf  udev
+cron.monthly               hosts.allow          mtab            request-key.d     update-motd.d
+crontab                    hosts.deny           nanorc          resolv.conf       vimrc
+cron.weekly                idmapd.conf          netconfig       rmt               virc
+csh.cshrc                  image-id             NetworkManager  rpc               wgetrc
+csh.login                  init                 networks        rpm               X11
+dbus-1                     init.d               nfsmount.conf   rsyslog.conf      xdg
+default                    inittab              nsswitch.conf   rsyslog.d         xinetd.d
+depmod.d                   inputrc              ntp             rwtab             yum
+dhcp                       iproute2             ntp.conf        rwtab.d           yum.conf
+DIR_COLORS                 issue                openldap        sasl2             yum.repos.d
+DIR_COLORS.256color        issue.net            opt             screenrc
+DIR_COLORS.lightbgcolor    java                 os-release      securetty
+dracut.conf                jvm                  pam.d           security
+dracut.conf.d              jvm-commmon          passwd          selinux
+[root@ip-172-31-90-44 etc]# vi e
+e2fsck.conf  environment  ethers       exports      exports.d/
+[root@ip-172-31-90-44 etc]# vi e
+e2fsck.conf  environment  ethers       exports      exports.d/
+[root@ip-172-31-90-44 etc]# update-alternatives --config java
+
+There is 1 program that provides 'java'.
+
+  Selection    Command
+-----------------------------------------------
+*+ 1           /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/java
+
+Enter to keep the current selection[+], or type selection number:
+[root@ip-172-31-90-44 etc]# cat environment
+[root@ip-172-31-90-44 etc]# cat>>environment
+JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk.x86_64/^Z
+[1]+  Stopped                 cat >> environment
+[root@ip-172-31-90-44 etc]# cat>>environment
+JAVA_HOME="/usr/lib/jvm/jre-1.8.0-openjdk.x86_64"
+[root@ip-172-31-90-44 etc]# source environment
+[root@ip-172-31-90-44 etc]# echo $JAVA_HOME
+/usr/lib/jvm/jre-1.8.0-openjdk.x86_64
+[root@ip-172-31-90-44 etc]# cd /opt
+[root@ip-172-31-90-44 opt]# clear
+[root@ip-172-31-90-44 opt]# ls
+aws
+[root@ip-172-31-90-44 opt]# cd
+[root@ip-172-31-90-44 ~]# clear
+[root@ip-172-31-90-44 ~]# ls
+[root@ip-172-31-90-44 ~]# wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -^C
+[root@ip-172-31-90-44 ~]# cat /etc/os-release
+NAME="Amazon Linux AMI"
+VERSION="2018.03"
+ID="amzn"
+ID_LIKE="rhel fedora"
+VERSION_ID="2018.03"
+PRETTY_NAME="Amazon Linux AMI 2018.03"
+ANSI_COLOR="0;33"
+CPE_NAME="cpe:/o:amazon:linux:2018.03:ga"
+HOME_URL="http://aws.amazon.com/amazon-linux-ami/"
+[root@ip-172-31-90-44 ~]# sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+--2018-10-07 06:43:06--  https://pkg.jenkins.io/redhat-stable/jenkins.repo
+Resolving pkg.jenkins.io (pkg.jenkins.io)... 52.202.51.185
+Connecting to pkg.jenkins.io (pkg.jenkins.io)|52.202.51.185|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 85
+Saving to: ‘/etc/yum.repos.d/jenkins.repo’
+
+/etc/yum.repos.d/jenkins.r 100%[=======================================>]      85  --.-KB/s    in 0s
+
+2018-10-07 06:43:07 (7.38 MB/s) - ‘/etc/yum.repos.d/jenkins.repo’ saved [85/85]
+
+[root@ip-172-31-90-44 ~]# sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.keysudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+curl: (22) The requested URL returned error: 404 Not Found
+error: https://pkg.jenkins.io/redhat-stable/jenkins.io.keysudo: import read failed(2).
+error: rpm: import read failed(2).
+[root@ip-172-31-90-44 ~]# yum install curl
+Loaded plugins: priorities, update-motd, upgrade-helper
+amzn-main                                                                           | 2.1 kB  00:00:00
+amzn-updates                                                                        | 2.5 kB  00:00:00
+jenkins                                                                             | 2.9 kB  00:00:00
+jenkins/primary_db                                                                  |  25 kB  00:00:00
+Package curl-7.53.1-16.84.amzn1.x86_64 already installed and latest version
+Nothing to do
+[root@ip-172-31-90-44 ~]# sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.keysudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+curl: (22) The requested URL returned error: 404 Not Found
+error: https://pkg.jenkins.io/redhat-stable/jenkins.io.keysudo: import read failed(2).
+error: rpm: import read failed(2).
+[root@ip-172-31-90-44 ~]# yum install rpm
+Loaded plugins: priorities, update-motd, upgrade-helper
+Package rpm-4.11.3-21.75.amzn1.x86_64 already installed and latest version
+Nothing to do
+[root@ip-172-31-90-44 ~]# sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.keysudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+curl: (22) The requested URL returned error: 404 Not Found
+error: https://pkg.jenkins.io/redhat-stable/jenkins.io.keysudo: import read failed(2).
+error: rpm: import read failed(2).
+[root@ip-172-31-90-44 ~]# sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+[root@ip-172-31-90-44 ~]# yum install jenkins
+Loaded plugins: priorities, update-motd, upgrade-helper
+Resolving Dependencies
+--> Running transaction check
+---> Package jenkins.noarch 0:2.138.1-1.1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+===========================================================================================================
+ Package                 Arch                   Version                      Repository               Size
+===========================================================================================================
+Installing:
+ jenkins                 noarch                 2.138.1-1.1                  jenkins                  72 M
+
+Transaction Summary
+===========================================================================================================
+Install  1 Package
+
+Total download size: 72 M
+Installed size: 72 M
+Is this ok [y/d/N]: y
+Downloading packages:
+jenkins-2.138.1-1.1.noarch.rpm                                                      |  72 MB  00:00:02
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : jenkins-2.138.1-1.1.noarch                                                              1/1
+  Verifying  : jenkins-2.138.1-1.1.noarch                                                              1/1
+
+Installed:
+  jenkins.noarch 0:2.138.1-1.1
+
+Complete!
+[root@ip-172-31-90-44 ~]# clear
+[root@ip-172-31-90-44 ~]# cd /var/lib/jenkins/
+[root@ip-172-31-90-44 jenkins]# ls
+[root@ip-172-31-90-44 jenkins]# ls
+[root@ip-172-31-90-44 jenkins]# cd
+[root@ip-172-31-90-44 ~]# wget https://pkg.jenkins.io/redhat-stable/jenkins-2.138.1-1.1.noarch.rpm
+--2018-10-07 06:49:59--  https://pkg.jenkins.io/redhat-stable/jenkins-2.138.1-1.1.noarch.rpm
+Resolving pkg.jenkins.io (pkg.jenkins.io)... 52.202.51.185
+Connecting to pkg.jenkins.io (pkg.jenkins.io)|52.202.51.185|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://prodjenkinsreleases.blob.core.windows.net/redhat-stable/jenkins-2.138.1-1.1.noarch.rpm [following]
+--2018-10-07 06:49:59--  https://prodjenkinsreleases.blob.core.windows.net/redhat-stable/jenkins-2.138.1-1.1.noarch.rpm
+Resolving prodjenkinsreleases.blob.core.windows.net (prodjenkinsreleases.blob.core.windows.net)... 104.208.128.30
+Connecting to prodjenkinsreleases.blob.core.windows.net (prodjenkinsreleases.blob.core.windows.net)|104.208.128.30|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 75527385 (72M) [application/x-redhat-package-manager]
+Saving to: ‘jenkins-2.138.1-1.1.noarch.rpm’
+
+jenkins-2.138.1-1.1.noarch 100%[=======================================>]  72.03M  19.5MB/s    in 3.7s
+
+2018-10-07 06:50:03 (19.5 MB/s) - ‘jenkins-2.138.1-1.1.noarch.rpm’ saved [75527385/75527385]
+
+[root@ip-172-31-90-44 ~]# cd /var/lib/jenkins/
+[root@ip-172-31-90-44 jenkins]# ls
+[root@ip-172-31-90-44 jenkins]# cd
+[root@ip-172-31-90-44 ~]# ls
+jenkins-2.138.1-1.1.noarch.rpm
+[root@ip-172-31-90-44 ~]# rpm -ivh jenkins-2.138.1-1.1.noarch.rpm
+Preparing...                          ################################# [100%]
+        package jenkins-2.138.1-1.1.noarch is already installed
+[root@ip-172-31-90-44 ~]# cd /var/lib/jenkins/
+[root@ip-172-31-90-44 jenkins]# ls
+[root@ip-172-31-90-44 jenkins]# cd
+[root@ip-172-31-90-44 ~]# ls
+jenkins-2.138.1-1.1.noarch.rpm
+[root@ip-172-31-90-44 ~]# yum update
+Loaded plugins: priorities, update-motd, upgrade-helper
+amzn-main                                                                           | 2.1 kB  00:00:00
+amzn-updates                                                                        | 2.5 kB  00:00:00
+Resolving Dependencies
+--> Running transaction check
+---> Package amazon-ssm-agent.x86_64 0:2.2.916.0-1.amzn1 will be updated
+---> Package amazon-ssm-agent.x86_64 0:2.3.68.0-1.amzn1 will be an update
+---> Package aws-cli.noarch 0:1.14.9-1.48.amzn1 will be updated
+---> Package aws-cli.noarch 0:1.15.83-1.49.amzn1 will be an update
+---> Package e2fsprogs.x86_64 0:1.42.12-4.40.amzn1 will be updated
+---> Package e2fsprogs.x86_64 0:1.43.5-2.43.amzn1 will be an update
+--> Processing Dependency: libfuse.so.2(FUSE_2.8)(64bit) for package: e2fsprogs-1.43.5-2.43.amzn1.x86_64
+--> Processing Dependency: libfuse.so.2(FUSE_2.6)(64bit) for package: e2fsprogs-1.43.5-2.43.amzn1.x86_64
+--> Processing Dependency: libfuse.so.2(FUSE_2.5)(64bit) for package: e2fsprogs-1.43.5-2.43.amzn1.x86_64
+--> Processing Dependency: libfuse.so.2()(64bit) for package: e2fsprogs-1.43.5-2.43.amzn1.x86_64
+---> Package e2fsprogs-libs.x86_64 0:1.42.12-4.40.amzn1 will be updated
+---> Package e2fsprogs-libs.x86_64 0:1.43.5-2.43.amzn1 will be an update
+---> Package gnupg2.x86_64 0:2.0.28-2.32.amzn1 will be updated
+---> Package gnupg2.x86_64 0:2.0.28-2.33.amzn1 will be an update
+---> Package kernel.x86_64 0:4.14.72-68.55.amzn1 will be installed
+---> Package krb5-libs.x86_64 0:1.15.1-8.43.amzn1 will be updated
+---> Package krb5-libs.x86_64 0:1.15.1-19.43.amzn1 will be an update
+---> Package libcom_err.x86_64 0:1.42.12-4.40.amzn1 will be updated
+---> Package libcom_err.x86_64 0:1.43.5-2.43.amzn1 will be an update
+---> Package libss.x86_64 0:1.42.12-4.40.amzn1 will be updated
+---> Package libss.x86_64 0:1.43.5-2.43.amzn1 will be an update
+---> Package libxml2.x86_64 0:2.9.1-6.3.49.amzn1 will be updated
+---> Package libxml2.x86_64 0:2.9.1-6.3.52.amzn1 will be an update
+---> Package libxml2-python27.x86_64 0:2.9.1-6.3.49.amzn1 will be updated
+---> Package libxml2-python27.x86_64 0:2.9.1-6.3.52.amzn1 will be an update
+---> Package ntp.x86_64 0:4.2.8p11-2.38.amzn1 will be updated
+---> Package ntp.x86_64 0:4.2.8p12-1.39.amzn1 will be an update
+---> Package ntpdate.x86_64 0:4.2.8p11-2.38.amzn1 will be updated
+---> Package ntpdate.x86_64 0:4.2.8p12-1.39.amzn1 will be an update
+---> Package openssh.x86_64 0:7.4p1-16.69.amzn1 will be updated
+---> Package openssh.x86_64 0:7.4p1-16.71.amzn1 will be an update
+---> Package openssh-clients.x86_64 0:7.4p1-16.69.amzn1 will be updated
+---> Package openssh-clients.x86_64 0:7.4p1-16.71.amzn1 will be an update
+---> Package openssh-server.x86_64 0:7.4p1-16.69.amzn1 will be updated
+---> Package openssh-server.x86_64 0:7.4p1-16.71.amzn1 will be an update
+---> Package openssl.x86_64 1:1.0.2k-12.109.amzn1 will be updated
+---> Package openssl.x86_64 1:1.0.2k-12.110.amzn1 will be an update
+---> Package procps.x86_64 0:3.2.8-30.14.amzn1 will be updated
+---> Package procps.x86_64 0:3.2.8-45.16.amzn1 will be an update
+---> Package python27-botocore.noarch 0:1.8.13-1.66.amzn1 will be updated
+---> Package python27-botocore.noarch 0:1.10.82-1.67.amzn1 will be an update
+--> Running transaction check
+---> Package fuse-libs.x86_64 0:2.9.4-1.17.amzn1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+===========================================================================================================
+ Package                     Arch             Version                         Repository              Size
+===========================================================================================================
+Installing:
+ kernel                      x86_64           4.14.72-68.55.amzn1             amzn-updates            21 M
+Updating:
+ amazon-ssm-agent            x86_64           2.3.68.0-1.amzn1                amzn-updates            17 M
+ aws-cli                     noarch           1.15.83-1.49.amzn1              amzn-updates           1.2 M
+ e2fsprogs                   x86_64           1.43.5-2.43.amzn1               amzn-updates           1.5 M
+ e2fsprogs-libs              x86_64           1.43.5-2.43.amzn1               amzn-updates           208 k
+ gnupg2                      x86_64           2.0.28-2.33.amzn1               amzn-updates           2.6 M
+ krb5-libs                   x86_64           1.15.1-19.43.amzn1              amzn-updates           861 k
+ libcom_err                  x86_64           1.43.5-2.43.amzn1               amzn-updates            47 k
+ libss                       x86_64           1.43.5-2.43.amzn1               amzn-updates            52 k
+ libxml2                     x86_64           2.9.1-6.3.52.amzn1              amzn-updates           723 k
+ libxml2-python27            x86_64           2.9.1-6.3.52.amzn1              amzn-updates           331 k
+ ntp                         x86_64           4.2.8p12-1.39.amzn1             amzn-updates           1.0 M
+ ntpdate                     x86_64           4.2.8p12-1.39.amzn1             amzn-updates            89 k
+ openssh                     x86_64           7.4p1-16.71.amzn1               amzn-updates           639 k
+ openssh-clients             x86_64           7.4p1-16.71.amzn1               amzn-updates           1.1 M
+ openssh-server              x86_64           7.4p1-16.71.amzn1               amzn-updates           511 k
+ openssl                     x86_64           1:1.0.2k-12.110.amzn1           amzn-updates           1.8 M
+ procps                      x86_64           3.2.8-45.16.amzn1               amzn-updates           250 k
+ python27-botocore           noarch           1.10.82-1.67.amzn1              amzn-updates           4.5 M
+Installing for dependencies:
+ fuse-libs                   x86_64           2.9.4-1.17.amzn1                amzn-main               98 k
+
+Transaction Summary
+===========================================================================================================
+Install   1 Package  (+1 Dependent package)
+Upgrade  18 Packages
+
+Total download size: 55 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/20): aws-cli-1.15.83-1.49.amzn1.noarch.rpm                                       | 1.2 MB  00:00:00
+(2/20): e2fsprogs-1.43.5-2.43.amzn1.x86_64.rpm                                      | 1.5 MB  00:00:01
+(3/20): e2fsprogs-libs-1.43.5-2.43.amzn1.x86_64.rpm                                 | 208 kB  00:00:00
+(4/20): amazon-ssm-agent-2.3.68.0-1.amzn1.x86_64.rpm                                |  17 MB  00:00:02
+(5/20): fuse-libs-2.9.4-1.17.amzn1.x86_64.rpm                                       |  98 kB  00:00:00
+(6/20): gnupg2-2.0.28-2.33.amzn1.x86_64.rpm                                         | 2.6 MB  00:00:00
+(7/20): krb5-libs-1.15.1-19.43.amzn1.x86_64.rpm                                     | 861 kB  00:00:00
+(8/20): libcom_err-1.43.5-2.43.amzn1.x86_64.rpm                                     |  47 kB  00:00:00
+(9/20): libss-1.43.5-2.43.amzn1.x86_64.rpm                                          |  52 kB  00:00:00
+(10/20): libxml2-2.9.1-6.3.52.amzn1.x86_64.rpm                                      | 723 kB  00:00:00
+(11/20): libxml2-python27-2.9.1-6.3.52.amzn1.x86_64.rpm                             | 331 kB  00:00:00
+(12/20): ntp-4.2.8p12-1.39.amzn1.x86_64.rpm                                         | 1.0 MB  00:00:00
+(13/20): ntpdate-4.2.8p12-1.39.amzn1.x86_64.rpm                                     |  89 kB  00:00:00
+(14/20): openssh-7.4p1-16.71.amzn1.x86_64.rpm                                       | 639 kB  00:00:00
+(15/20): openssh-clients-7.4p1-16.71.amzn1.x86_64.rpm                               | 1.1 MB  00:00:00
+(16/20): openssh-server-7.4p1-16.71.amzn1.x86_64.rpm                                | 511 kB  00:00:00
+(17/20): openssl-1.0.2k-12.110.amzn1.x86_64.rpm                                     | 1.8 MB  00:00:00
+(18/20): procps-3.2.8-45.16.amzn1.x86_64.rpm                                        | 250 kB  00:00:00
+(19/20): python27-botocore-1.10.82-1.67.amzn1.noarch.rpm                            | 4.5 MB  00:00:01
+(20/20): kernel-4.14.72-68.55.amzn1.x86_64.rpm                                      |  21 MB  00:00:07
+-----------------------------------------------------------------------------------------------------------
+Total                                                                      5.9 MB/s |  55 MB  00:00:09
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Updating   : libcom_err-1.43.5-2.43.amzn1.x86_64                                                    1/38
+  Updating   : krb5-libs-1.15.1-19.43.amzn1.x86_64                                                    2/38
+  Updating   : 1:openssl-1.0.2k-12.110.amzn1.x86_64                                                   3/38
+  Updating   : openssh-7.4p1-16.71.amzn1.x86_64                                                       4/38
+  Updating   : ntpdate-4.2.8p12-1.39.amzn1.x86_64                                                     5/38
+  Updating   : e2fsprogs-libs-1.43.5-2.43.amzn1.x86_64                                                6/38
+  Updating   : libss-1.43.5-2.43.amzn1.x86_64                                                         7/38
+  Installing : fuse-libs-2.9.4-1.17.amzn1.x86_64                                                      8/38
+  Updating   : libxml2-2.9.1-6.3.52.amzn1.x86_64                                                      9/38
+  Updating   : python27-botocore-1.10.82-1.67.amzn1.noarch                                           10/38
+  Updating   : aws-cli-1.15.83-1.49.amzn1.noarch                                                     11/38
+  Updating   : libxml2-python27-2.9.1-6.3.52.amzn1.x86_64                                            12/38
+  Updating   : e2fsprogs-1.43.5-2.43.amzn1.x86_64                                                    13/38
+  Updating   : ntp-4.2.8p12-1.39.amzn1.x86_64                                                        14/38
+  Updating   : openssh-clients-7.4p1-16.71.amzn1.x86_64                                              15/38
+  Updating   : openssh-server-7.4p1-16.71.amzn1.x86_64                                               16/38
+  Installing : kernel-4.14.72-68.55.amzn1.x86_64                                                     17/38
+  Updating   : amazon-ssm-agent-2.3.68.0-1.amzn1.x86_64                                              18/38
+  Updating   : procps-3.2.8-45.16.amzn1.x86_64                                                       19/38
+  Updating   : gnupg2-2.0.28-2.33.amzn1.x86_64                                                       20/38
+  Cleanup    : ntp-4.2.8p11-2.38.amzn1.x86_64                                                        21/38
+  Cleanup    : ntpdate-4.2.8p11-2.38.amzn1.x86_64                                                    22/38
+  Cleanup    : e2fsprogs-1.42.12-4.40.amzn1.x86_64                                                   23/38
+  Cleanup    : openssh-server-7.4p1-16.69.amzn1.x86_64                                               24/38
+  Cleanup    : openssh-clients-7.4p1-16.69.amzn1.x86_64                                              25/38
+  Cleanup    : aws-cli-1.14.9-1.48.amzn1.noarch                                                      26/38
+  Cleanup    : openssh-7.4p1-16.69.amzn1.x86_64                                                      27/38
+  Cleanup    : krb5-libs-1.15.1-8.43.amzn1.x86_64                                                    28/38
+  Cleanup    : 1:openssl-1.0.2k-12.109.amzn1.x86_64                                                  29/38
+  Cleanup    : e2fsprogs-libs-1.42.12-4.40.amzn1.x86_64                                              30/38
+  Cleanup    : libss-1.42.12-4.40.amzn1.x86_64                                                       31/38
+  Cleanup    : libxml2-python27-2.9.1-6.3.49.amzn1.x86_64                                            32/38
+  Cleanup    : python27-botocore-1.8.13-1.66.amzn1.noarch                                            33/38
+  Cleanup    : libxml2-2.9.1-6.3.49.amzn1.x86_64                                                     34/38
+  Cleanup    : libcom_err-1.42.12-4.40.amzn1.x86_64                                                  35/38
+  Cleanup    : amazon-ssm-agent-2.2.916.0-1.amzn1.x86_64                                             36/38
+  Cleanup    : procps-3.2.8-30.14.amzn1.x86_64                                                       37/38
+  Cleanup    : gnupg2-2.0.28-2.32.amzn1.x86_64                                                       38/38
+  Verifying  : python27-botocore-1.10.82-1.67.amzn1.noarch                                            1/38
+  Verifying  : e2fsprogs-libs-1.43.5-2.43.amzn1.x86_64                                                2/38
+  Verifying  : gnupg2-2.0.28-2.33.amzn1.x86_64                                                        3/38
+  Verifying  : libxml2-2.9.1-6.3.52.amzn1.x86_64                                                      4/38
+  Verifying  : openssh-clients-7.4p1-16.71.amzn1.x86_64                                               5/38
+  Verifying  : ntpdate-4.2.8p12-1.39.amzn1.x86_64                                                     6/38
+  Verifying  : procps-3.2.8-45.16.amzn1.x86_64                                                        7/38
+  Verifying  : fuse-libs-2.9.4-1.17.amzn1.x86_64                                                      8/38
+  Verifying  : openssh-server-7.4p1-16.71.amzn1.x86_64                                                9/38
+  Verifying  : openssh-7.4p1-16.71.amzn1.x86_64                                                      10/38
+  Verifying  : libcom_err-1.43.5-2.43.amzn1.x86_64                                                   11/38
+  Verifying  : e2fsprogs-1.43.5-2.43.amzn1.x86_64                                                    12/38
+  Verifying  : libxml2-python27-2.9.1-6.3.52.amzn1.x86_64                                            13/38
+  Verifying  : amazon-ssm-agent-2.3.68.0-1.amzn1.x86_64                                              14/38
+  Verifying  : krb5-libs-1.15.1-19.43.amzn1.x86_64                                                   15/38
+  Verifying  : libss-1.43.5-2.43.amzn1.x86_64                                                        16/38
+  Verifying  : aws-cli-1.15.83-1.49.amzn1.noarch                                                     17/38
+  Verifying  : 1:openssl-1.0.2k-12.110.amzn1.x86_64                                                  18/38
+  Verifying  : ntp-4.2.8p12-1.39.amzn1.x86_64                                                        19/38
+  Verifying  : kernel-4.14.72-68.55.amzn1.x86_64                                                     20/38
+  Verifying  : libss-1.42.12-4.40.amzn1.x86_64                                                       21/38
+  Verifying  : aws-cli-1.14.9-1.48.amzn1.noarch                                                      22/38
+  Verifying  : ntpdate-4.2.8p11-2.38.amzn1.x86_64                                                    23/38
+  Verifying  : krb5-libs-1.15.1-8.43.amzn1.x86_64                                                    24/38
+  Verifying  : ntp-4.2.8p11-2.38.amzn1.x86_64                                                        25/38
+  Verifying  : 1:openssl-1.0.2k-12.109.amzn1.x86_64                                                  26/38
+  Verifying  : openssh-server-7.4p1-16.69.amzn1.x86_64                                               27/38
+  Verifying  : python27-botocore-1.8.13-1.66.amzn1.noarch                                            28/38
+  Verifying  : amazon-ssm-agent-2.2.916.0-1.amzn1.x86_64                                             29/38
+  Verifying  : libxml2-python27-2.9.1-6.3.49.amzn1.x86_64                                            30/38
+  Verifying  : gnupg2-2.0.28-2.32.amzn1.x86_64                                                       31/38
+  Verifying  : libcom_err-1.42.12-4.40.amzn1.x86_64                                                  32/38
+  Verifying  : e2fsprogs-libs-1.42.12-4.40.amzn1.x86_64                                              33/38
+  Verifying  : openssh-7.4p1-16.69.amzn1.x86_64                                                      34/38
+  Verifying  : e2fsprogs-1.42.12-4.40.amzn1.x86_64                                                   35/38
+  Verifying  : libxml2-2.9.1-6.3.49.amzn1.x86_64                                                     36/38
+  Verifying  : openssh-clients-7.4p1-16.69.amzn1.x86_64                                              37/38
+  Verifying  : procps-3.2.8-30.14.amzn1.x86_64                                                       38/38
+
+Installed:
+  kernel.x86_64 0:4.14.72-68.55.amzn1
+
+Dependency Installed:
+  fuse-libs.x86_64 0:2.9.4-1.17.amzn1
+
+Updated:
+  amazon-ssm-agent.x86_64 0:2.3.68.0-1.amzn1         aws-cli.noarch 0:1.15.83-1.49.amzn1
+  e2fsprogs.x86_64 0:1.43.5-2.43.amzn1               e2fsprogs-libs.x86_64 0:1.43.5-2.43.amzn1
+  gnupg2.x86_64 0:2.0.28-2.33.amzn1                  krb5-libs.x86_64 0:1.15.1-19.43.amzn1
+  libcom_err.x86_64 0:1.43.5-2.43.amzn1              libss.x86_64 0:1.43.5-2.43.amzn1
+  libxml2.x86_64 0:2.9.1-6.3.52.amzn1                libxml2-python27.x86_64 0:2.9.1-6.3.52.amzn1
+  ntp.x86_64 0:4.2.8p12-1.39.amzn1                   ntpdate.x86_64 0:4.2.8p12-1.39.amzn1
+  openssh.x86_64 0:7.4p1-16.71.amzn1                 openssh-clients.x86_64 0:7.4p1-16.71.amzn1
+  openssh-server.x86_64 0:7.4p1-16.71.amzn1          openssl.x86_64 1:1.0.2k-12.110.amzn1
+  procps.x86_64 0:3.2.8-45.16.amzn1                  python27-botocore.noarch 0:1.10.82-1.67.amzn1
+
+Complete!
+[root@ip-172-31-90-44 ~]# cd /var/lib/jenkins/
+[root@ip-172-31-90-44 jenkins]# ls
+[root@ip-172-31-90-44 jenkins]# cd
+[root@ip-172-31-90-44 ~]# ls
+jenkins-2.138.1-1.1.noarch.rpm
+[root@ip-172-31-90-44 ~]# rpm -ivh jenkins-2.138.1-1.1.noarch.rpm
+Preparing...                          ################################# [100%]
+        package jenkins-2.138.1-1.1.noarch is already installed
+[root@ip-172-31-90-44 ~]# ls
+jenkins-2.138.1-1.1.noarch.rpm
+[root@ip-172-31-90-44 ~]# yum install jenkins
+Loaded plugins: priorities, update-motd, upgrade-helper
+Package jenkins-2.138.1-1.1.noarch already installed and latest version
+Nothing to do
+[root@ip-172-31-90-44 ~]# ervice jenkins start/stop/restart
+-bash: ervice: command not found
+[root@ip-172-31-90-44 ~]# service jenkins start/stop/restart
+Usage: /etc/init.d/jenkins {start|stop|status|try-restart|restart|force-reload|reload|probe}
+[root@ip-172-31-90-44 ~]# service jenkins start
+Starting Jenkins                                           [  OK  ]
+[root@ip-172-31-90-44 ~]# cd /var/lib/jenkins/
+[root@ip-172-31-90-44 jenkins]# ls
+config.xml                     jenkins.install.UpgradeWizard.state  nodes                     secrets
+hudson.model.UpdateCenter.xml  jobs                                 plugins                   updates
+identity.key.enc               logs                                 secret.key                userContent
+jenkins.CLI.xml                nodeMonitors.xml                     secret.key.not-so-secret  users
+[root@ip-172-31-90-44 jenkins]# cat secrets/initialAdminPassword
+fe4416a11e7c4ebf8d7f71eda0419ac1
+[root@ip-172-31-90-44 jenkins]#
