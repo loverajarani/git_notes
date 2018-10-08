@@ -1,0 +1,164 @@
+Authenticating with public key "imported-openssh-key"
+     ┌────────────────────────────────────────────────────────────────────┐
+     │                        • MobaXterm 10.8 •                          │
+     │            (SSH client, X-server and networking tools)             │
+     │                                                                    │
+     │ ➤ SSH session to ubuntu@54.209.248.246                             │
+     │   • SSH compression : ✔                                            │
+     │   • SSH-browser     : ✔                                            │
+     │   • X11-forwarding  : ✔  (remote display is forwarded through SSH) │
+     │   • DISPLAY         : ✔  (automatically set on remote server)      │
+     │                                                                    │
+     │ ➤ For more info, ctrl+click on help or visit our website           │
+     └────────────────────────────────────────────────────────────────────┘
+
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-1021-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Mon Oct  8 04:37:48 UTC 2018
+
+  System load:  0.0               Processes:           106
+  Usage of /:   17.3% of 7.69GB   Users logged in:     1
+  Memory usage: 19%               IP address for eth0: 172.31.46.169
+  Swap usage:   0%
+
+ * Security certifications for Ubuntu!
+   We now have FIPS, STIG, CC and a CIS Benchmark.
+
+   - http://bit.ly/Security_Certification
+
+ * Want to make a highly secure kiosk, smart display or touchscreen?
+   Here's a step-by-step tutorial for a rainy weekend, or a startup.
+
+   - https://bit.ly/secure-kiosk
+
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+47 packages can be updated.
+26 updates are security updates.
+
+
+Last login: Mon Oct  8 04:08:07 2018 from 183.82.218.97
+ubuntu@ANSIBLE:~$ sudo -i
+root@ANSIBLE:~# cat /etc/hosts
+127.0.0.1 localhost
+172.31.46.169 MASTER master.localdomain.com
+172.31.85.176 agent agent.localdomain.com
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+root@ANSIBLE:~#  ssh-copy-id root@172.31.85.176
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_rsa.pub"
+The authenticity of host '172.31.85.176 (172.31.85.176)' can't be established.
+ECDSA key fingerprint is SHA256:I7O44g2E+/yXiZrViVj/gSIxLNqClRIFxXjhy01ybF4.
+Are you sure you want to continue connecting (yes/no)? yes
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+root@172.31.85.176: Permission denied (publickey).
+root@ANSIBLE:~# ls a-a
+ls: cannot access 'a-a': No such file or directory
+root@ANSIBLE:~# ls -a
+.  ..  .ansible  .bash_history  .bashrc  .profile  .ssh  .viminfo  snap
+root@ANSIBLE:~# cd .ssh/
+root@ANSIBLE:~/.ssh# ls
+authorized_keys  id_rsa  id_rsa.pub  known_hosts
+root@ANSIBLE:~/.ssh# cat id_rsapub
+cat: id_rsapub: No such file or directory
+root@ANSIBLE:~/.ssh# cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMgYF+qB0iR6qyBvFTPG5k9nTiO9nifm3GM0d8jobxAdPMDSfsGJSduWwycmY2+Qwks2w07Hh1ORgeU6dzs75k5sTUMODHqu5Ho7ShNq1IGWxM5+4may61OoB5tAlir26kaHjpCsITFYfrG+i4fyQyr6BvS59mHP6E5dGlmH7OEOpKeKO7p+YRUFgyYTgPqcMBlMXj1thzwb3VdspR65goI8R85x2bPkWshCVt0q+tCuax1m44e4ovX3RkI9eiX3A9LPTjolj2HE61WeXahrA0tNebbcESGSrfCRqmPQSm2g/i8TyS6ombBMXCvfyQHD7Fhjw0/qpipQZtm/DGTdON root@ANSIBLE
+root@ANSIBLE:~/.ssh#  ssh-copy-id root@172.31.85.176
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+root@172.31.85.176: Permission denied (publickey).
+root@ANSIBLE:~/.ssh# ssh-copy-id root@172.31.85.176
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/root/.ssh/id_rsa.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+root@172.31.85.176: Permission denied (publickey).
+root@ANSIBLE:~/.ssh# cd
+root@ANSIBLE:~# ansible agent -m ping -u root
+ [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost
+does not match 'all'
+
+ [WARNING]: Could not match supplied host pattern, ignoring: agent
+
+root@ANSIBLE:~# ansible all -m ping
+ [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost
+does not match 'all'
+
+root@ANSIBLE:~# cd /etc/ansible/
+root@ANSIBLE:/etc/ansible# ls
+ansible.cfg  hosts  roles
+root@ANSIBLE:/etc/ansible# cat hosts
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+## green.example.com
+## blue.example.com
+## 192.168.100.1
+## 192.168.100.10
+
+# Ex 2: A collection of hosts belonging to the 'webservers' group
+
+## [webservers]
+## alpha.example.org
+## beta.example.org
+## 192.168.1.100
+## 192.168.1.110
+
+# If you have multiple hosts following a pattern you can specify
+# them like this:
+
+## www[001:006].example.com
+
+# Ex 3: A collection of database servers in the 'dbservers' group
+
+## [dbservers]
+##
+## db01.intranet.mydomain.net
+## db02.intranet.mydomain.net
+## 10.25.1.56
+## 10.25.1.57
+
+# Here's another example of host ranges, this time there are no
+# leading 0s:
+
+## db-[99:101]-node.example.com
+
+root@ANSIBLE:/etc/ansible# vi hosts
+root@ANSIBLE:/etc/ansible# ansible all -m ping
+ [WARNING]:  * Failed to parse /etc/ansible/hosts with yaml plugin: Syntax Error while loading YAML.   did
+not find expected <document start>  The error appears to have been in '/etc/ansible/hosts': line 23,
+column 1, but may be elsewhere in the file depending on the exact syntax problem.  The offending line
+appears to be:  ## beta.example.org 172.31.46.169 MASTER master.localdomain.com ^ here
+
+ [WARNING]:  * Failed to parse /etc/ansible/hosts with ini plugin: /etc/ansible/hosts:23: Expected
+key=value host variable assignment, got: MASTER
+
+ [WARNING]: Unable to parse /etc/ansible/hosts as an inventory source
+
+ [WARNING]: No inventory was parsed, only implicit localhost is available
+
+ [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost
+does not match 'all'
+
+root@ANSIBLE:/etc/ansible#
