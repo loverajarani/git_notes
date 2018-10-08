@@ -1,0 +1,133 @@
+Authenticating with public key "imported-openssh-key"
+     ┌────────────────────────────────────────────────────────────────────┐
+     │                        • MobaXterm 10.8 •                          │
+     │            (SSH client, X-server and networking tools)             │
+     │                                                                    │
+     │ ➤ SSH session to ec2-user@54.162.253.58                            │
+     │   • SSH compression : ✔                                            │
+     │   • SSH-browser     : ✔                                            │
+     │   • X11-forwarding  : ✘  (disabled or not supported by server)     │
+     │   • DISPLAY         : 192.168.0.116:0.0                            │
+     │                                                                    │
+     │ ➤ For more info, ctrl+click on help or visit our website           │
+     └────────────────────────────────────────────────────────────────────┘
+
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+11 package(s) needed for security, out of 20 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-172-31-85-176 ~]$ ifconfig
+eth0      Link encap:Ethernet  HWaddr 12:F6:78:E6:7A:AE
+          inet addr:172.31.85.176  Bcast:172.31.95.255  Mask:255.255.240.0
+          inet6 addr: fe80::10f6:78ff:fee6:7aae/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:9001  Metric:1
+          RX packets:5807 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:966 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:7648740 (7.2 MiB)  TX bytes:94761 (92.5 KiB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:2 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:140 (140.0 b)  TX bytes:140 (140.0 b)
+
+[ec2-user@ip-172-31-85-176 ~]$ sudo -i
+[root@ip-172-31-85-176 ~]# vi /etc/hostname
+[root@ip-172-31-85-176 ~]# cd /etc/
+[root@ip-172-31-85-176 etc]# ls
+acpi                       dumpdates            krb5.conf       passwd-           services
+adjtime                    e2fsck.conf          krb5.conf.d     pkcs11            sestatus.conf
+aliases                    environment          ld.so.cache     pki               shadow
+aliases.db                 ethers               ld.so.conf      pm                shadow-
+alternatives               exports              ld.so.conf.d    popt.d            shells
+amazon                     exports.d            libaudit.conf   ppp               skel
+anacrontab                 filesystems          libreport       prelink.conf.d    smrsh
+asound.conf                fonts                libuser.conf    printcap          ssh
+at.deny                    fstab                localtime       profile           ssl
+audisp                     gcrypt               login.defs      profile.d         statetab
+audit                      gnupg                logrotate.conf  protocols         statetab.d
+bash_completion.d          GREP_COLORS          logrotate.d     rc                sudo.conf
+bashrc                     groff                lvm             rc0.d             sudoers
+blkid                      group                magic           rc1.d             sudoers.d
+cgconfig.conf              group-               mail            rc2.d             sudo-ldap.conf
+cgrules.conf               grub.conf            mailcap         rc3.d             sysconfig
+cgsnapshot_blacklist.conf  gshadow              man_db.conf     rc4.d             sysctl.conf
+chkconfig.d                gshadow-             maven           rc5.d             sysctl.d
+cloud                      gss                  mime.types      rc6.d             system-release
+cron.d                     gssapi_mech.conf     mke2fs.conf     rc.d              system-release-cpe
+cron.daily                 hibagent-config.cfg  modprobe.d      rc.local          terminfo
+cron.deny                  host.conf            motd            rc.sysinit        tmpfiles.d
+cron.hourly                hosts                motd.rpmsave    request-key.conf  udev
+cron.monthly               hosts.allow          mtab            request-key.d     update-motd.d
+crontab                    hosts.deny           nanorc          resolv.conf       vimrc
+cron.weekly                idmapd.conf          netconfig       rmt               virc
+csh.cshrc                  image-id             NetworkManager  rpc               wgetrc
+csh.login                  init                 networks        rpm               X11
+dbus-1                     init.d               nfsmount.conf   rsyslog.conf      xdg
+default                    inittab              nsswitch.conf   rsyslog.d         xinetd.d
+depmod.d                   inputrc              ntp             rwtab             yum
+dhcp                       iproute2             ntp.conf        rwtab.d           yum.conf
+DIR_COLORS                 issue                openldap        sasl2             yum.repos.d
+DIR_COLORS.256color        issue.net            opt             screenrc
+DIR_COLORS.lightbgcolor    java                 os-release      securetty
+dracut.conf                jvm                  pam.d           security
+dracut.conf.d              jvm-commmon          passwd          selinux
+[root@ip-172-31-85-176 etc]# vi /etc/issue
+[root@ip-172-31-85-176 etc]# cat /etc/issue
+Amazon Linux AMI release 2018.03
+Kernel \r on an \m
+
+[root@ip-172-31-85-176 etc]# vi /etc/hosts
+[root@ip-172-31-85-176 etc]# hostname
+ip-172-31-85-176
+[root@ip-172-31-85-176 etc]# vi /etc/hostname
+[root@ip-172-31-85-176 etc]# hostname agent
+[root@ip-172-31-85-176 etc]# exec bash
+[root@agent etc]# hostname
+agent
+[root@agent etc]# vi hosts
+[root@agent etc]# cat hosts
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost6 localhost6.localdomain6
+172.31.46.169 MASTER master.localdomain.com
+172.31.85.176 agent agent.localdomain.com
+[root@agent etc]# ifconfig
+eth0      Link encap:Ethernet  HWaddr 12:F6:78:E6:7A:AE
+          inet addr:172.31.85.176  Bcast:172.31.95.255  Mask:255.255.240.0
+          inet6 addr: fe80::10f6:78ff:fee6:7aae/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:9001  Metric:1
+          RX packets:6755 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1767 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:7711374 (7.3 MiB)  TX bytes:169217 (165.2 KiB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:2 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:140 (140.0 b)  TX bytes:140 (140.0 b)
+
+[root@agent etc]# ping MASTER
+PING MASTER (172.31.46.169) 56(84) bytes of data.
+64 bytes from MASTER (172.31.46.169): icmp_seq=1 ttl=64 time=1.00 ms
+64 bytes from MASTER (172.31.46.169): icmp_seq=2 ttl=64 time=0.976 ms
+64 bytes from MASTER (172.31.46.169): icmp_seq=3 ttl=64 time=1.87 ms
+64 bytes from MASTER (172.31.46.169): icmp_seq=4 ttl=64 time=1.07 ms
+64 bytes from MASTER (172.31.46.169): icmp_seq=5 ttl=64 time=2.83 ms
+64 bytes from MASTER (172.31.46.169): icmp_seq=6 ttl=64 time=1.07 ms
+^C
+--- MASTER ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5006ms
+rtt min/avg/max/mdev = 0.976/1.472/2.836/0.684 ms
+[root@agent etc]#
