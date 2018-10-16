@@ -1,0 +1,440 @@
+Authenticating with public key "imported-openssh-key"
+     ┌────────────────────────────────────────────────────────────────────┐
+     │                        • MobaXterm 10.8 •                          │
+     │            (SSH client, X-server and networking tools)             │
+     │                                                                    │
+     │ ➤ SSH session to ubuntu@54.89.35.18                                │
+     │   • SSH compression : ✔                                            │
+     │   • SSH-browser     : ✔                                            │
+     │   • X11-forwarding  : ✔  (remote display is forwarded through SSH) │
+     │   • DISPLAY         : ✔  (automatically set on remote server)      │
+     │                                                                    │
+     │ ➤ For more info, ctrl+click on help or visit our website           │
+     └────────────────────────────────────────────────────────────────────┘
+
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-1023-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Oct 16 04:36:57 UTC 2018
+
+  System load:  0.0               Processes:           99
+  Usage of /:   21.6% of 7.69GB   Users logged in:     1
+  Memory usage: 16%               IP address for eth0: 172.31.46.169
+  Swap usage:   0%
+
+ * Security certifications for Ubuntu!
+   We now have FIPS, STIG, CC and a CIS Benchmark.
+
+   - http://bit.ly/Security_Certification
+
+ * Want to make a highly secure kiosk, smart display or touchscreen?
+   Here's a step-by-step tutorial for a rainy weekend, or a startup.
+
+   - https://bit.ly/secure-kiosk
+
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+28 packages can be updated.
+0 updates are security updates.
+
+
+Last login: Tue Oct 16 04:03:27 2018 from 183.82.218.97
+ubuntu@master:~$ ansible agent -m ping -u root
+ [WARNING]:  * Failed to parse /etc/ansible/hosts with yaml plugin: YAML inventory has invalid structure,
+it should be a dictionary, got: <class 'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+ [WARNING]:  * Failed to parse /etc/ansible/hosts with ini plugin: /etc/ansible/hosts:1: Expected
+key=value host variable assignment, got: client
+
+ [WARNING]: Unable to parse /etc/ansible/hosts as an inventory source
+
+ [WARNING]: No inventory was parsed, only implicit localhost is available
+
+ [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost
+does not match 'all'
+
+ [WARNING]: Could not match supplied host pattern, ignoring: agent
+
+ubuntu@master:~$ ansible client -m ping -u root
+ [WARNING]:  * Failed to parse /etc/ansible/hosts with yaml plugin: YAML inventory has invalid structure,
+it should be a dictionary, got: <class 'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+ [WARNING]:  * Failed to parse /etc/ansible/hosts with ini plugin: /etc/ansible/hosts:1: Expected
+key=value host variable assignment, got: client
+
+ [WARNING]: Unable to parse /etc/ansible/hosts as an inventory source
+
+ [WARNING]: No inventory was parsed, only implicit localhost is available
+
+ [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost
+does not match 'all'
+
+ [WARNING]: Could not match supplied host pattern, ignoring: client
+
+ubuntu@master:~$ cd /etc/ansible/
+ubuntu@master:/etc/ansible$ ansible client -m ping -u root
+ [WARNING]:  * Failed to parse /etc/ansible/hosts with yaml plugin: YAML inventory has invalid structure,
+it should be a dictionary, got: <class 'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+ [WARNING]:  * Failed to parse /etc/ansible/hosts with ini plugin: /etc/ansible/hosts:1: Expected
+key=value host variable assignment, got: client
+
+ [WARNING]: Unable to parse /etc/ansible/hosts as an inventory source
+
+ [WARNING]: No inventory was parsed, only implicit localhost is available
+
+ [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost
+does not match 'all'
+
+ [WARNING]: Could not match supplied host pattern, ignoring: client
+
+ubuntu@master:/etc/ansible$ ls
+ansible.cfg  host  hosts  playbooks  roles
+ubuntu@master:/etc/ansible$ ansible client -m ping -u root
+ [WARNING]:  * Failed to parse /etc/ansible/hosts with yaml plugin: YAML inventory has invalid structure,
+it should be a dictionary, got: <class 'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+ [WARNING]:  * Failed to parse /etc/ansible/hosts with ini plugin: /etc/ansible/hosts:1: Expected
+key=value host variable assignment, got: client
+
+ [WARNING]: Unable to parse /etc/ansible/hosts as an inventory source
+
+ [WARNING]: No inventory was parsed, only implicit localhost is available
+
+ [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost
+does not match 'all'
+
+ [WARNING]: Could not match supplied host pattern, ignoring: client
+
+ubuntu@master:/etc/ansible$ vi hosts
+ubuntu@master:/etc/ansible$ sudo -i
+root@master:~# cd /etc/ansible/hosts
+-bash: cd: /etc/ansible/hosts: Not a directory
+root@master:~# cd /etc/ansible/
+root@master:/etc/ansible# vi hosts
+root@master:/etc/ansible# ansible client -m ping -U root
+[DEPRECATION WARNING]: The sudo command line option has been deprecated in favor of the "become" command
+line arguments. This feature will be removed in version 2.9. Deprecation warnings can be disabled by
+setting deprecation_warnings=False in ansible.cfg.
+ [WARNING]: Could not match supplied host pattern, ignoring: client
+
+ [WARNING]: No hosts matched, nothing to do
+
+root@master:/etc/ansible# vi ansible.cfg
+root@master:/etc/ansible# ansible client -m ping -U root
+[DEPRECATION WARNING]: The sudo command line option has been deprecated in favor of the "become" command
+line arguments. This feature will be removed in version 2.9. Deprecation warnings can be disabled by
+setting deprecation_warnings=False in ansible.cfg.
+ [WARNING]: Could not match supplied host pattern, ignoring: client
+
+ [WARNING]: No hosts matched, nothing to do
+
+root@master:/etc/ansible# vi ansible.cfg
+root@master:/etc/ansible# ansible client -m ping -U root
+ [WARNING]: Could not match supplied host pattern, ignoring: client
+
+ [WARNING]: No hosts matched, nothing to do
+
+root@master:/etc/ansible# ansible client_host -m ping -U root
+client_host | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname client_host: Temporary failure in name resolution\r\n",
+    "unreachable": true
+}
+root@master:/etc/ansible# ansible -m ping dev
+master_host | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname master_host: Temporary failure in name resolution\r\n",
+    "unreachable": true
+}
+client_host | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname client_host: Temporary failure in name resolution\r\n",
+    "unreachable": true
+}
+root@master:/etc/ansible# vi ansible.cfg
+root@master:/etc/ansible# vi hosts
+root@master:/etc/ansible# ansible -m ping dev
+The authenticity of host 'client (172.31.47.193)' can't be established.
+ECDSA key fingerprint is SHA256:EtHUbagYe0CIhOOJIf8n1BhfOkwXoOrp6I7o4epxMeM.
+Are you sure you want to continue connecting (yes/no)? The authenticity of host 'master (172.31.46.169)' can't be established.
+ECDSA key fingerprint is SHA256:fouDdHj4OFv61CyvAtgsF3Qkh1GvAGtFvbBQLUGYsQg.
+Are you sure you want to continue connecting (yes/no)?
+client | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: Host key verification failed.\r\n",
+    "unreachable": true
+}
+
+master | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: Host key verification failed.\r\n",
+    "unreachable": true
+}
+root@master:/etc/ansible# ansible client -m ping -u root
+The authenticity of host 'client (172.31.47.193)' can't be established.
+ECDSA key fingerprint is SHA256:EtHUbagYe0CIhOOJIf8n1BhfOkwXoOrp6I7o4epxMeM.
+Are you sure you want to continue connecting (yes/no)?
+client | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: Host key verification failed.\r\n",
+    "unreachable": true
+}
+root@master:/etc/ansible# ansible client -m ping -u root -k
+SSH password:  [ERROR]: User interrupted execution
+
+root@master:/etc/ansible# ansible client -m ping -u root -k
+SSH password:
+client | FAILED! => {
+    "msg": "Using a SSH password instead of a key is not possible because Host Key checking is enabled and sshpass does not support this.  Please add this host's fingerprint to your known_hosts file to manage this host."
+}
+root@master:/etc/ansible# ansible -m ping dev
+The authenticity of host 'client (172.31.47.193)' can't be established.
+ECDSA key fingerprint is SHA256:EtHUbagYe0CIhOOJIf8n1BhfOkwXoOrp6I7o4epxMeM.
+Are you sure you want to continue connecting (yes/no)? The authenticity of host 'master (172.31.46.169)' can't be established.
+ECDSA key fingerprint is SHA256:fouDdHj4OFv61CyvAtgsF3Qkh1GvAGtFvbBQLUGYsQg.
+Are you sure you want to continue connecting (yes/no)?
+client | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: Host key verification failed.\r\n",
+    "unreachable": true
+}
+
+master | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: Host key verification failed.\r\n",
+    "unreachable": true
+}
+root@master:/etc/ansible# ansible client -m ping -u root
+The authenticity of host 'client (172.31.47.193)' can't be established.
+ECDSA key fingerprint is SHA256:EtHUbagYe0CIhOOJIf8n1BhfOkwXoOrp6I7o4epxMeM.
+Are you sure you want to continue connecting (yes/no)?
+client | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: Host key verification failed.\r\n",
+    "unreachable": true
+}
+root@master:/etc/ansible# ansible client -m ping -u root
+The authenticity of host 'client (172.31.47.193)' can't be established.
+ECDSA key fingerprint is SHA256:EtHUbagYe0CIhOOJIf8n1BhfOkwXoOrp6I7o4epxMeM.
+Are you sure you want to continue connecting (yes/no)?
+client | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: Host key verification failed.\r\n",
+    "unreachable": true
+}
+root@master:/etc/ansible# vi ansible.cfg
+root@master:/etc/ansible# ansible client -m ping -u root
+The authenticity of host 'client (172.31.47.193)' can't be established.
+ECDSA key fingerprint is SHA256:EtHUbagYe0CIhOOJIf8n1BhfOkwXoOrp6I7o4epxMeM.
+Are you sure you want to continue connecting (yes/no)?
+client | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: Host key verification failed.\r\n",
+    "unreachable": true
+}
+root@master:/etc/ansible# ansible client -m ping -u home
+The authenticity of host 'client (172.31.47.193)' can't be established.
+ECDSA key fingerprint is SHA256:EtHUbagYe0CIhOOJIf8n1BhfOkwXoOrp6I7o4epxMeM.
+Are you sure you want to continue connecting (yes/no)?
+client | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: Host key verification failed.\r\n",
+    "unreachable": true
+}
+root@master:/etc/ansible# cd
+root@master:~# vi /etc/hosts
+root@master:~#
+───────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file
+
+Network error: Software caused connection abort
+******************************************************************************************************************
+Authenticating with public key "imported-openssh-key"
+     ┌────────────────────────────────────────────────────────────────────┐
+     │                        • MobaXterm 10.8 •                          │
+     │            (SSH client, X-server and networking tools)             │
+     │                                                                    │
+     │ ➤ SSH session to ubuntu@34.228.247.77                              │
+     │   • SSH compression : ✔                                            │
+     │   • SSH-browser     : ✔                                            │
+     │   • X11-forwarding  : ✔  (remote display is forwarded through SSH) │
+     │   • DISPLAY         : ✔  (automatically set on remote server)      │
+     │                                                                    │
+     │ ➤ For more info, ctrl+click on help or visit our website           │
+     └────────────────────────────────────────────────────────────────────┘
+
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-1023-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Oct 16 05:25:23 UTC 2018
+
+  System load:  0.04              Processes:           91
+  Usage of /:   21.6% of 7.69GB   Users logged in:     0
+  Memory usage: 13%               IP address for eth0: 172.31.46.169
+  Swap usage:   0%
+
+ * Security certifications for Ubuntu!
+   We now have FIPS, STIG, CC and a CIS Benchmark.
+
+   - http://bit.ly/Security_Certification
+
+ * Want to make a highly secure kiosk, smart display or touchscreen?
+   Here's a step-by-step tutorial for a rainy weekend, or a startup.
+
+   - https://bit.ly/secure-kiosk
+
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+28 packages can be updated.
+0 updates are security updates.
+
+
+Last login: Tue Oct 16 04:36:59 2018 from 183.82.218.97
+ubuntu@master:~$
+ubuntu@master:~$
+ubuntu@master:~$
+ubuntu@master:~$
+ubuntu@master:~$
+ubuntu@master:~$
+ubuntu@master:~$
+ubuntu@master:~$ sudo -i
+root@master:~# cd /etc/ansible/
+root@master:/etc/ansible# ansible client -m ping -u root
+client | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host client port 22: No route to host\r\n",
+    "unreachable": true
+}
+root@master:/etc/ansible# ansible client -m ping -u root
+client | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host client port 22: No route to host\r\n",
+    "unreachable": true
+}
+root@master:/etc/ansible# ansible client -m ping -u root -k
+SSH password:
+client | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host client port 22: No route to host\r\n",
+    "unreachable": true
+}
+root@master:/etc/ansible# vi hosts
+root@master:/etc/ansible# ls
+ansible.cfg  host  hosts  playbooks  roles
+root@master:/etc/ansible# vi ansible.cfg
+root@master:/etc/ansible# vi hosts
+root@master:/etc/ansible# ansible client -m ping -u root
+client | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host client port 22: No route to host\r\n",
+    "unreachable": true
+}
+root@master:/etc/ansible# cd ..
+root@master:/etc# vi hosts
+root@master:/etc# vi hosts
+root@master:/etc# ansible client -m ping -u root
+client | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host client port 22: Connection timed out\r\n",
+    "unreachable": true
+}
+root@master:/etc#
+root@master:/etc#
+root@master:/etc#
+root@master:/etc#
+root@master:/etc#
+root@master:/etc#
+root@master:/etc#
+root@master:/etc#
+root@master:/etc#
+root@master:/etc#
+root@master:/etc# ansible client -m ping -u root
+The authenticity of host 'client (172.31.47.193)' can't be established.
+ECDSA key fingerprint is SHA256:EtHUbagYe0CIhOOJIf8n1BhfOkwXoOrp6I7o4epxMeM.
+Are you sure you want to continue connecting (yes/no)?
+client | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: Host key verification failed.\r\n",
+    "unreachable": true
+}
+root@master:/etc# ansible client -m ping -u root
+The authenticity of host 'client (172.31.47.193)' can't be established.
+ECDSA key fingerprint is SHA256:EtHUbagYe0CIhOOJIf8n1BhfOkwXoOrp6I7o4epxMeM.
+Are you sure you want to continue connecting (yes/no)?
+client | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: Host key verification failed.\r\n",
+    "unreachable": true
+}
+root@master:/etc# cd ansible/
+root@master:/etc/ansible# ansible client -m ping -u root
+The authenticity of host 'client (172.31.47.193)' can't be established.
+ECDSA key fingerprint is SHA256:EtHUbagYe0CIhOOJIf8n1BhfOkwXoOrp6I7o4epxMeM.
+Are you sure you want to continue connecting (yes/no)? yes
+client | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+root@master:/etc/ansible#
+*****************************************************************
+Authenticating with public key "imported-openssh-key"
+     ┌────────────────────────────────────────────────────────────────────┐
+     │                        • MobaXterm 10.8 •                          │
+     │            (SSH client, X-server and networking tools)             │
+     │                                                                    │
+     │ ➤ SSH session to ec2-user@54.85.252.196                            │
+     │   • SSH compression : ✔                                            │
+     │   • SSH-browser     : ✔                                            │
+     │   • X11-forwarding  : ✘  (disabled or not supported by server)     │
+     │   • DISPLAY         : 192.168.0.116:0.0                            │
+     │                                                                    │
+     │ ➤ For more info, ctrl+click on help or visit our website           │
+     └────────────────────────────────────────────────────────────────────┘
+
+Last login: Tue Oct 16 04:35:50 2018 from 183.82.218.97
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+1 package(s) needed for security, out of 5 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@client ~]$ sudo -i
+[root@client ~]# vi /etc/hosts
+[root@client ~]# cd .ssh/
+[root@client .ssh]# cat authorized_keys
+no-port-forwarding,no-agent-forwarding,no-X11-forwarding,command="echo 'Please login as the user \"ec2-user\" rather than the user \"root\".';echo;sleep 10" ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCwjCuWAKCjhHDrIVL46CYAsTl0UtRGuNJfFM4wiByusqMxvD2pwp6iEd95AxNS4dHNTGy38itI7HfM8MX8fm686DKliOS/FYeKyVT7GWfIf1iMYQMCSuLXnQbNqzHo38kpqD8+YpHsva6QUMNOZ8YwH4amrQkAkh0anjXTR1T3vyjfmwRVVImzAkpPLB8L1MZA1nlc4+5IKIj/SEKXgw8ScAp4whIGsYr0TyElLlnvOTmP/zFWs9O10PfzC36FaCimIvWWyYIDMhyJ49dts5/8aEqQVKUe0CXaf3gnW+Bb7N+4JYIbZPs3ez5je/PtbnH6MKJgwkimYBSqZ1fUoxjr aws_pemkey
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMgYF+qB0iR6qyBvFTPG5k9nTiO9nifm3GM0d8jobxAdPMDSfsGJSduWwycmY2+Qwks2w07Hh1ORgeU6dzs75k5sTUMODHqu5Ho7ShNq1IGWxM5+4may61OoB5tAlir26kaHjpCsITFYfrG+i4fyQyr6BvS59mHP6E5dGlmH7OEOpKeKO7p+YRUFgyYTgPqcMBlMXj1thzwb3VdspR65goI8R85x2bPkWshCVt0q+tCuax1m44e4ovX3RkI9eiX3A9LPTjolj2HE61WeXahrA0tNebbcESGSrfCRqmPQSm2g/i8TyS6ombBMXCvfyQHD7Fhjw0/qpipQZtm/DGTdON root@ANSIBLE
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEA8pDE9Vqn0ZSW6G7QTvIAxDvMzLQkraFRw7XlPS9/VyVGFs+7Qoq4l4qjjrJ4rX90Y2syrQT+H6aNb29A9zYztSzgp73qWihiyBQsz4P9paI5q1YpNEOdzkDQa/4Ip6ii2mTUg/uRL9ROXWw/VzyHScAfd6wYO8kglx8V6XBDl4mKypUnoxghCF8FskDmaugAGlo0dwQ+VTzNsZLFHoLpkx5WPb3xoSLygxqs/gP37H83f1RqQhvqqsm14Kfvb6c5dfhtRMrzQgpi+gd4vaHMsbUb7qDty36EBjeOeQfsDVcKidz3vHeBLEMe9X734nLS/cNUrRtJ0uodnTu3LW5 root@master
+[root@client .ssh]# yum install python
+Loaded plugins: extras_suggestions, langpacks, priorities, update-motd
+Package python-2.7.14-58.amzn2.0.4.x86_64 already installed and latest version
+Nothing to do
+[root@client .ssh]#
+
+*********************************************************************************************
