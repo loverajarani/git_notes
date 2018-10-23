@@ -1,0 +1,87 @@
+sudo apt-get purge ansible
+sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
+ansible --version
+ansible-playbook -i hosts main.yml
+********************************************************
+root@master:/etc/ansible/playbooks# vi apacheremove.yml 
+root@master:/etc/ansible/playbooks# ansible-playbook -i hosts apacheremove.yml 
+[DEPRECATION WARNING]: Instead of sudo/sudo_user, use become/become_user and make sure become_method is 'sudo' (default). This feature will be removed
+ in version 2.9. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+
+PLAY [dba] ********************************************************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************************************************
+ok: [master]
+ok: [agent]
+
+TASK [remove apache2] *********************************************************************************************************************************
+fatal: [agent]: FAILED! => {"changed": false, "msg": "value of state must be one of: absent, build-dep, installed, latest, present, removed, present, got: remove"}
+fatal: [master]: FAILED! => {"changed": false, "msg": "value of state must be one of: absent, build-dep, installed, latest, present, removed, present, got: remove"}
+	to retry, use: --limit @/etc/ansible/playbooks/apacheremove.retry
+
+PLAY RECAP ********************************************************************************************************************************************
+agent                      : ok=1    changed=0    unreachable=0    failed=1   
+master                     : ok=1    changed=0    unreachable=0    failed=1   
+
+root@master:/etc/ansible/playbooks# vi apacheremove.yml 
+root@master:/etc/ansible/playbooks# ansible-playbook -i hosts apacheremove.yml 
+
+PLAY [dba] ********************************************************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************************************************
+ok: [agent]
+ok: [master]
+
+TASK [remove apache2] *********************************************************************************************************************************
+fatal: [agent]: FAILED! => {"changed": false, "msg": "value of state must be one of: absent, build-dep, installed, latest, present, removed, present, got: remove"}
+fatal: [master]: FAILED! => {"changed": false, "msg": "value of state must be one of: absent, build-dep, installed, latest, present, removed, present, got: remove"}
+	to retry, use: --limit @/etc/ansible/playbooks/apacheremove.retry
+
+PLAY RECAP ********************************************************************************************************************************************
+agent                      : ok=1    changed=0    unreachable=0    failed=1   
+master                     : ok=1    changed=0    unreachable=0    failed=1   
+
+root@master:/etc/ansible/playbooks# vi apacheremove.yml 
+root@master:/etc/ansible/playbooks# ansible-playbook -i hosts apacheremove.yml 
+
+PLAY [dba] ********************************************************************************************************************************************
+
+TASK [Gathering Facts] ********************************************************************************************************************************
+ok: [agent]
+ok: [master]
+
+TASK [remove apache2] *********************************************************************************************************************************
+[DEPRECATION WARNING]: State 'removed' is deprecated. Using state 'absent' instead.. This feature will be removed in version 2.9. Deprecation warnings
+ can be disabled by setting deprecation_warnings=False in ansible.cfg.
+changed: [agent]
+changed: [master]
+
+PLAY RECAP ********************************************************************************************************************************************
+agent                      : ok=2    changed=1    unreachable=0    failed=0   
+master                     : ok=2    changed=1    unreachable=0    failed=0   
+
+root@master:/etc/ansible/playbooks# cat apacheremove.yml 
+---
+- hosts: dba
+  #sudo: yes
+  tasks:
+    - name: remove apache2
+      apt: name=apache2 state=removed
+root@master:/etc/ansible/playbooks# cat sample.yml 
+---
+- hosts: dba
+  tasks:
+          - name: run echo command
+            command: /bin/echo hello raja
+root@master:/etc/ansible/playbooks# cat demo.yml 
+---
+- hosts: dba
+  tasks:
+    - name: run echo command
+      command: /bin/echo hello sammy
+root@master:/etc/ansible/playbooks# cat abc.txt 
+hai ansible 
+how are you
