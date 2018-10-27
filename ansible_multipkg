@@ -1,0 +1,15 @@
+root@master:/etc/ansible# cat mysql.yml
+---
+ - hosts: client
+   user: root
+   tasks:
+    - name: Install Mysql package
+      apt: pkg={{ item }} state=installed
+      with_items:
+       - mysql-server
+       - mysql-python
+       - libselinux-python
+       - libsemanage-python
+    - name: start Mysql service
+      service: name=mysqld state=started enabled=yes
+root@master:/etc/ansible#
