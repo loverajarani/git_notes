@@ -1,0 +1,237 @@
+  root@master:/etc/ansible# ls
+ansible.cfg  files  roles       webserver.retry
+demo.yml     hosts  sample.yml  webserver.yml
+root@master:/etc/ansible# cd
+root@master:~# ls
+abc.txt  mysql.retry  mysql.yml  snap  xyz.yaml
+root@master:~# cp mysql.yml /etc/ansible/
+root@master:~# clear
+root@master:~# cd /etc/ansible/
+root@master:/etc/ansible# ls
+ansible.cfg  files  mysql.yml  sample.yml       webserver.yml
+demo.yml     hosts  roles      webserver.retry
+root@master:/etc/ansible# ansible-playbook mysql.yml
+
+PLAY [client] ******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [client]
+
+TASK [install mysql package] ***************************************************
+fatal: [client]: FAILED! => {"msg": "The task includes an option with an undefin                                  ed variable. The error was: 'items' is undefined\n\nThe error appears to have be                                  en in '/etc/ansible/mysql.yml': line 5, column 7, but may\nbe elsewhere in the f                                  ile depending on the exact syntax problem.\n\nThe offending line appears to be:\                                  n\n   tasks:\n    - name: install mysql package\n      ^ here\n"}
+        to retry, use: --limit @/etc/ansible/mysql.retry
+
+PLAY RECAP *********************************************************************
+client                     : ok=1    changed=0    unreachable=0    failed=1
+
+root@master:/etc/ansible# vi mysql.yml
+root@master:/etc/ansible# ansible-playbook mysql.yml
+
+PLAY [client] ******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [client]
+
+TASK [install mysql package] ***************************************************
+fatal: [client]: FAILED! => {"msg": "The task includes an option with an undefin                                  ed variable. The error was: 'items' is undefined\n\nThe error appears to have be                                  en in '/etc/ansible/mysql.yml': line 5, column 7, but may\nbe elsewhere in the f                                  ile depending on the exact syntax problem.\n\nThe offending line appears to be:\                                  n\n   tasks:\n    - name: install mysql package\n      ^ here\n"}
+        to retry, use: --limit @/etc/ansible/mysql.retry
+
+PLAY RECAP *********************************************************************
+client                     : ok=1    changed=0    unreachable=0    failed=1
+
+root@master:/etc/ansible# vi mysql.yml
+root@master:/etc/ansible# ansible-playbook mysql.yml
+
+PLAY [client] ******************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [client]
+
+TASK [install mysql package] ***************************************************
+[DEPRECATION WARNING]: Invoking "yum" only once while using a loop via
+squash_actions is deprecated. Instead of using a loop to supply multiple items
+and specifying `name: {{ item }}`, please use `name: [u'mysql-server', u'mysql-
+python', u'libselinux-python', u'libsemanage-python']` and remove the loop.
+This feature will be removed in version 2.11. Deprecation warnings can be
+disabled by setting deprecation_warnings=False in ansible.cfg.
+[DEPRECATION WARNING]: State 'installed' is deprecated. Using state 'present'
+instead.. This feature will be removed in version 2.9. Deprecation warnings can
+ be disabled by setting deprecation_warnings=False in ansible.cfg.
+failed: [client] (item=[u'mysql-server', u'mysql-python', u'libselinux-python',                                   u'libsemanage-python']) => {"ansible_facts": {"pkg_mgr": "apt"}, "changed": fals                                  e, "item": ["mysql-server", "mysql-python", "libselinux-python", "libsemanage-py                                  thon"], "msg": "No package matching 'mysql-python' is available"}
+        to retry, use: --limit @/etc/ansible/mysql.retry
+
+PLAY RECAP *********************************************************************
+client                     : ok=1    changed=0    unreachable=0    failed=1
+
+root@master:/etc/ansible# vi mysql.yml
+root@master:/etc/ansible# ls
+ansible.cfg  files  mysql.retry  roles       webserver.retry
+demo.yml     hosts  mysql.yml    sample.yml  webserver.yml
+root@master:/etc/ansible# cat sample.yml
+---
+ - hosts: client
+   user: root
+   vars:
+    testmsg: "welcome to ansible world\n this is my first playbook in ansible\n"
+   tasks:
+   - name: copy example file
+     copy:
+      dest: /root/abc.txt
+      content: "{{ testmsg }}"
+   - name: create dir
+     file:
+      path: /root/some_directory
+      state: directory
+      mode: 0755
+root@master:/etc/ansible# ls
+ansible.cfg  demo.yml  files  hosts  mysql.retry  mysql.yml  roles  sample.yml  webserver.retry  webserver.yml
+root@master:/etc/ansible# cat demo.yml
+---
+- name: play 1
+  hosts: client
+  tasks:
+   - name: execute command 'date'
+     command: date
+
+root@master:/etc/ansible# ls
+ansible.cfg  demo.yml  files  hosts  mysql.retry  mysql.yml  roles  sample.yml  webserver.retry  webserver.yml
+root@master:/etc/ansible# cat mysql.yml
+---
+ - hosts: client
+   user: root
+   tasks:
+    - name: install mysql package
+      yum: name={{ item }} state=installed
+      with_items:
+       - mysql-server
+       - mysql-python
+       - libselinux-python
+       - libsemanage-python
+    - name: start mysql service
+      service: name=mysql state=started enabled=yes
+root@master:/etc/ansible# ls
+ansible.cfg  demo.yml  files  hosts  mysql.retry  mysql.yml  roles  sample.yml  webserver.retry  webserver.yml
+root@master:/etc/ansible# cat webserver.yml
+---
+ - hosts: client
+   user: root
+   tasks:
+   - name: installed
+     action: apt name=apache2 state=installed
+   - name: copy index.html
+     copy: src=files/index.html dest=/var/www/html/index.html
+   - name: start apache
+     service: name=apache2 state=started
+
+
+root@master:/etc/ansible# ls
+ansible.cfg  demo.yml  files  hosts  mysql.retry  mysql.yml  roles  sample.yml  webserver.retry  webserver.yml
+root@master:/etc/ansible# cat webserver.retry
+client
+root@master:/etc/ansible# cat mysql.retry
+client
+root@master:/etc/ansible# vi mysql.yml
+root@master:/etc/ansible# ansible-playbook mysql.yml
+
+PLAY [client] ****************************************************************************************************
+
+TASK [Gathering Facts] *******************************************************************************************
+ok: [client]
+
+TASK [install mysql package] *************************************************************************************
+[DEPRECATION WARNING]: Invoking "yum" only once while using a loop via squash_actions is deprecated. Instead of
+using a loop to supply multiple items and specifying `name: {{ item }}`, please use `name: [u'mysql-server', u
+'mysql-python', u'libselinux-python', u'libsemanage-python']` and remove the loop. This feature will be removed
+in version 2.11. Deprecation warnings can be disabled by setting deprecation_warnings=False in ansible.cfg.
+[DEPRECATION WARNING]: State 'installed' is deprecated. Using state 'present' instead.. This feature will be
+removed in version 2.9. Deprecation warnings can be disabled by setting deprecation_warnings=False in
+ansible.cfg.
+failed: [client] (item=[u'mysql-server', u'mysql-python', u'libselinux-python', u'libsemanage-python']) => {"ansible_facts": {"pkg_mgr": "apt"}, "changed": false, "item": ["mysql-server", "mysql-python", "libselinux-python", "libsemanage-python"], "msg": "No package matching 'mysql-python' is available"}
+        to retry, use: --limit @/etc/ansible/mysql.retry
+
+PLAY RECAP *******************************************************************************************************
+client                     : ok=1    changed=0    unreachable=0    failed=1
+
+root@master:/etc/ansible#
+
+
+
+***********************************************************************************************************************************
+Authenticating with public key "imported-openssh-key"
+     ┌────────────────────────────────────────────────────────────────────┐
+     │                        • MobaXterm 10.8 •                          │
+     │            (SSH client, X-server and networking tools)             │
+     │                                                                    │
+     │ ➤ SSH session to ubuntu@35.175.197.54                              │
+     │   • SSH compression : ✔                                            │
+     │   • SSH-browser     : ✔                                            │
+     │   • X11-forwarding  : ✔  (remote display is forwarded through SSH) │
+     │   • DISPLAY         : ✔  (automatically set on remote server)      │
+     │                                                                    │
+     │ ➤ For more info, ctrl+click on help or visit our website           │
+     └────────────────────────────────────────────────────────────────────┘
+
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-1021-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Oct 27 06:45:59 UTC 2018
+
+  System load:  0.0               Processes:           113
+  Usage of /:   20.4% of 7.69GB   Users logged in:     1
+  Memory usage: 22%               IP address for eth0: 172.31.21.172
+  Swap usage:   0%
+
+ * Security certifications for Ubuntu!
+   We now have FIPS, STIG, CC and a CIS Benchmark.
+
+   - http://bit.ly/Security_Certification
+
+ * Want to make a highly secure kiosk, smart display or touchscreen?
+   Here's a step-by-step tutorial for a rainy weekend, or a startup.
+
+   - https://bit.ly/secure-kiosk
+
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+56 packages can be updated.
+0 updates are security updates.
+
+
+*** System restart required ***
+Last login: Sat Oct 27 06:36:43 2018 from 124.123.87.175
+ubuntu@client:~$ sudo -i
+root@client:~# service apache2 status
+Unit apache2.service could not be found.
+root@client:~# service apache2 status
+● apache2.service - The Apache HTTP Server
+   Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset:
+  Drop-In: /lib/systemd/system/apache2.service.d
+           └─apache2-systemd.conf
+   Active: active (running) since Sat 2018-10-27 06:48:00 UTC; 17s ago
+ Main PID: 15059 (apache2)
+    Tasks: 55 (limit: 1152)
+   CGroup: /system.slice/apache2.service
+           ├─15059 /usr/sbin/apache2 -k start
+           ├─15061 /usr/sbin/apache2 -k start
+           └─15062 /usr/sbin/apache2 -k start
+
+Oct 27 06:48:00 client systemd[1]: Starting The Apache HTTP Server...
+Oct 27 06:48:00 client apachectl[15036]: AH00558: apache2: Could not reliably de
+Oct 27 06:48:00 client systemd[1]: Started The Apache HTTP Server.
+lines 1-15/15 (END)
+root@client:~# cd /var/www/html
+root@client:/var/www/html# ls
+index.html
+root@client:/var/www/html# cat index.html
+<html><body><h1>"welcome to ansible-playbook tree stucture"</h1></body></html>
+
+root@client:/var/www/html#
